@@ -10,6 +10,7 @@ const toggleDark = useToggle(isDark);
 const About = ref(null)
 const home = ref(null)
 const skills = ref(null)
+const services = ref(null)
 
 function scrollToAbout() {
     About.value.scrollIntoView({ behavior: 'smooth' })
@@ -19,6 +20,9 @@ function scrollToHome() {
 }
 function scrollToSkills() {
     skills.value.scrollIntoView({ behavior: 'smooth' })
+}
+function scrollToServices() {
+    services.value.scrollIntoView({ behavior: 'smooth' })
 }
 function scrollToTop() {
     window.scrollTo(0, 0);
@@ -77,20 +81,31 @@ export default {
             const home_link = this.$refs.home_link;
             const about_link = this.$refs.about_link;
             const skills_link = this.$refs.skills_link;
+            const services_link = this.$refs.services_link;
 
             if (prev >= 0 && prev < 700) {
                 home_link.classList.add("router-link-active");
                 about_link.classList.remove("router-link-active");
                 skills_link.classList.remove("router-link-active");
+                services_link.classList.remove("router-link-active");
 
             } else if (prev >= 700 && prev < 1400) {
                 home_link.classList.remove("router-link-active");
                 about_link.classList.add("router-link-active");
                 skills_link.classList.remove("router-link-active");
-            } else if (prev >= 1400 && prev < 1800) {
+                services_link.classList.remove("router-link-active");
+
+            } else if (prev >= 1400 && prev < 2160) {
                 home_link.classList.remove("router-link-active");
                 about_link.classList.remove("router-link-active");
                 skills_link.classList.add("router-link-active");
+                services_link.classList.remove("router-link-active");
+
+            } else if (prev >= 2160 && prev < 2500) {
+                home_link.classList.remove("router-link-active");
+                about_link.classList.remove("router-link-active");
+                skills_link.classList.remove("router-link-active");
+                services_link.classList.add("router-link-active");
             }
 
 
@@ -112,14 +127,12 @@ export default {
 }
 
 </script>
-<style >
-
-</style>
+<style ></style>
 <template>
     <head>
         <title>{{ $t('site.name') }}</title>
     </head>
-    
+
 
     <!-- *******************************************************start_nav******************************************************************************* -->
     <!-- *******************************************************start_nav******************************************************************************* -->
@@ -138,7 +151,7 @@ export default {
             <div class="lc-block position-absolute start-50 translate-middle top-50 d-none d-lg-block">
                 <a editable="inline" class="navbar-brand mx-auto" href="#">
                     <img src="./assets/img/logo.png" width="100" height="100" class="d-block mx-auto" alt="My Website"
-                    :style="isDark ? '' : 'filter: invert(1)'">
+                        :style="isDark ? '' : 'filter: invert(1)'">
                 </a>
             </div>
             <!-- end -->
@@ -168,6 +181,12 @@ export default {
                             <button ref="skills_link" @click="scrollToSkills" class="nav-link"
                                 :class="isDark ? 'btn_dark' : 'btn_light'">
                                 &nbsp; <font-awesome-icon icon="fa-solid fa-bomb" />&nbsp; {{ $t('nav.skills') }}
+                            </button>
+                        </li>
+                        <li>
+                            <button ref="services_link" @click="scrollToServices" class="nav-link"
+                                :class="isDark ? 'btn_dark' : 'btn_light'">
+                                &nbsp; <font-awesome-icon icon="fa-solid fa-server" />&nbsp; {{ $t('nav.services') }}
                             </button>
                         </li>
                     </ul> <!-- /lc_nav_menu -->
@@ -271,9 +290,8 @@ export default {
 
                             </h3>
 
-                            <p v-motion-pop 
-                            :class="isDark ? 'home_description_dark ' : 'home_description_light '"
-                            class="home_description animate-charcter">
+                            <p v-motion-pop :class="isDark ? 'home_description_dark ' : 'home_description_light '"
+                                class="home_description animate-charcter">
                                 {{ $t('home.description') }}
                             </p>
                             <a v-motion-roll-bottom href="#" :class="isDark ? 'btn btn-info' : 'btn btn-dark'">
@@ -308,9 +326,8 @@ export default {
                 <div v-motion :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0, scale: 1 }"
                     :variants="{ custom: { scale: 2 } }" :hovered="{ scale: 1.2 }" :delay="200"
                     class="col-12 col-md-5 col-lg-6">
-                    <div class="lc-block"><img alt=""
-                        :class="$t('home.home_image_transform_scaleX')" 
-                        class="img-fluid mx-auto d-block" src="./assets/img/home.png">
+                    <div class="lc-block"><img alt="" :class="$t('home.home_image_transform_scaleX')"
+                            class="img-fluid mx-auto d-block" src="./assets/img/home.png">
                     </div><!-- /lc-block -->
 
                 </div><!-- /col -->
@@ -389,7 +406,7 @@ export default {
     <section class="skills section" :class="isDark ? 'color_dark area_dark' : 'color_night area_light'"
         style="   padding-top: 8rem;">
 
-        <h2 v-motion-pop class="section__title">Skills</h2>
+        <h2 v-motion-pop class="section__title" :class="isDark ? 'color_dark' : 'color_night'">Skills</h2>
         <span class="section__subtitle">My technical lever</span>
 
         <div class="skills_container container grid">
@@ -409,89 +426,57 @@ export default {
                     <div class="skills_list grid">
                         <div class="skills_data">
                             <div class="skills_titles">
-                                <h3 class="skills_name">HTML & CSS</h3>
+                                <h3 class="skills_name"><font-awesome-icon icon="fa-brands fa-html5" /> HTML - & -
+                                    <font-awesome-icon icon="fa-brands fa-css3-alt" />&nbsp;CSS
+                                </h3>
                                 <span class="skills_number">90%</span>
                             </div>
                             <div class="skills_bar">
-                                <span class="skills_percentage skills_html"></span>
+                                <span :class="isDark ? 'skills_percentage_dark' : 'skills_percentage_light'"
+                                    class=" skills_html"></span>
                             </div>
                         </div>
                         <div class="skills_data">
                             <div class="skills_titles">
-                                <h3 class="skills_name">JavaScript & Jequry</h3>
+                                <h3 class="skills_name"><font-awesome-icon icon="fa-brands fa-js-square" />&nbsp;
+                                    JavaScript - & - <font-awesome-icon icon="fa-solid fa-rss" />&nbsp; jQuery</h3>
                                 <span class="skills_number">80%</span>
                             </div>
                             <div class="skills_bar">
-                                <span class="skills_percentage skills_css"></span>
+                                <span :class="isDark ? 'skills_percentage_dark' : 'skills_percentage_light'"
+                                    class=" skills_css"></span>
                             </div>
                         </div>
                         <div class="skills_data">
                             <div class="skills_titles">
-                                <h3 class="skills_name">bootstrap</h3>
+                                <h3 class="skills_name"><font-awesome-icon icon="fa-brands fa-bootstrap" />&nbsp;bootstrap
+                                </h3>
                                 <span class="skills_number">80%</span>
                             </div>
                             <div class="skills_bar">
-                                <span class="skills_percentage skills_javascript"></span>
+                                <span :class="isDark ? 'skills_percentage_dark' : 'skills_percentage_light'"
+                                    class=" skills_javascript"></span>
                             </div>
                         </div>
                         <div class="skills_data">
                             <div class="skills_titles">
-                                <h3 class="skills_name">vue.js 3</h3>
+                                <h3 class="skills_name"><font-awesome-icon icon="fa-brands fa-vuejs" /> Vue.js</h3>
                                 <span class="skills_number">60%</span>
                             </div>
                             <div class="skills_bar">
-                                <span class="skills_percentage skills_vue"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--=========== SKILL 2 ============-->
-                <div class="skills_content skills_open">
-                    <div class="skills_header">
-                        <i class="uil uil-server-network skills_icon"></i>
-
-                        <div>
-                            <h1 class="skills_title">Backend developer</h1>
-                            <span class="skills_subtitle">More than 7 years</span>
-                        </div>
-
-                        <i class="uil uil-angle-down skills_arrow"></i>
-                    </div>
-                    <div class="skills_list grid">
-                        <div class="skills_data">
-                            <div class="skills_titles">
-                                <h3 class="skills_name">PHP</h3>
-                                <span class="skills_number">80%</span>
-                            </div>
-                            <div class="skills_bar">
-                                <span class="skills_percentage skills_php"></span>
+                                <span :class="isDark ? 'skills_percentage_dark' : 'skills_percentage_light'"
+                                    class=" skills_vue"></span>
                             </div>
                         </div>
                         <div class="skills_data">
                             <div class="skills_titles">
-                                <h3 class="skills_name">Node J6</h3>
-                                <span class="skills_number">80%</span>
-                            </div>
-                            <div class="skills_bar">
-                                <span class="skills_percentage skills_nodejs"></span>
-                            </div>
-                        </div>
-                        <div class="skills_data">
-                            <div class="skills_titles">
-                                <h3 class="skills_name">Python</h3>
+                                <h3 class="skills_name"><font-awesome-icon
+                                        icon="fa-solid fa-wand-magic-sparkles" />&nbsp;Designer</h3>
                                 <span class="skills_number">60%</span>
                             </div>
                             <div class="skills_bar">
-                                <span class="skills_percentage skills_python"></span>
-                            </div>
-                        </div>
-                        <div class="skills_data">
-                            <div class="skills_titles">
-                                <h3 class="skills_name">Ruby</h3>
-                                <span class="skills_number">55%</span>
-                            </div>
-                            <div class="skills_bar">
-                                <span class="skills_percentage skills_ruby"></span>
+                                <span :class="isDark ? 'skills_percentage_dark' : 'skills_percentage_light'"
+                                    class=" skills_vue"></span>
                             </div>
                         </div>
                     </div>
@@ -504,8 +489,8 @@ export default {
                         <i class="uil uil-server-network skills_icon"></i>
 
                         <div>
-                            <h1 class="skills_title">Designer</h1>
-                            <span class="skills_subtitle">More than 5 years</span>
+                            <h1 class="skills_title">back-end developer</h1>
+                            <span class="skills_subtitle">More than {{ date - 2016 }} years</span>
                         </div>
 
                         <i class="uil uil-angle-down skills_arrow"></i>
@@ -513,38 +498,57 @@ export default {
                     <div class="skills_list grid">
                         <div class="skills_data">
                             <div class="skills_titles">
-                                <h3 class="skills_name">Figma</h3>
-                                <span class="skills_number">90%</span>
-                            </div>
-                            <div class="skills_bar">
-                                <span class="skills_percentage skills_figma"></span>
-                            </div>
-                        </div>
-                        <div class="skills_data">
-                            <div class="skills_titles">
-                                <h3 class="skills_name">Sketch</h3>
-                                <span class="skills_number">85%</span>
-                            </div>
-                            <div class="skills_bar">
-                                <span class="skills_percentage skills_sketch"></span>
-                            </div>
-                        </div>
-                        <div class="skills_data">
-                            <div class="skills_titles">
-                                <h3 class="skills_name">Adobe XD</h3>
+                                <h3 class="skills_name"><font-awesome-icon icon="fa-brands fa-php" /> &nbsp; php</h3>
                                 <span class="skills_number">80%</span>
                             </div>
                             <div class="skills_bar">
-                                <span class="skills_percentage skills_adobexd"></span>
+                                <span :class="isDark ? 'skills_percentage_dark' : 'skills_percentage_light'"
+                                    class=" skills_php"></span>
                             </div>
                         </div>
                         <div class="skills_data">
                             <div class="skills_titles">
-                                <h3 class="skills_name">Photoshop</h3>
+                                <h3 class="skills_name"><font-awesome-icon icon="fa-solid fa-database" />
+                                    &nbsp; SQL</h3>
+                                <span class="skills_number">75%</span>
+                            </div>
+                            <div class="skills_bar">
+                                <span :class="isDark ? 'skills_percentage_dark' : 'skills_percentage_light'"
+                                    class=" skills_sql"></span>
+                            </div>
+                        </div>
+                        <div class="skills_data">
+                            <div class="skills_titles">
+                                <h3 class="skills_name"><font-awesome-icon icon="fa-brands fa-laravel" /> &nbsp; Laravel
+                                </h3>
+                                <span class="skills_number">70%</span>
+                            </div>
+                            <div class="skills_bar">
+                                <span :class="isDark ? 'skills_percentage_dark' : 'skills_percentage_light'"
+                                    class=" skills_laravel"></span>
+                            </div>
+                        </div>
+                        <div class="skills_data">
+                            <div class="skills_titles">
+                                <h3 class="skills_name"><font-awesome-icon icon="fa-brands fa-laravel" /> &nbsp; Laravel
+                                    &nbsp; - With -
+                                    &nbsp; <font-awesome-icon icon="fa-brands fa-vuejs" /> &nbsp; Vue.js </h3>
+                                <span class="skills_number">60%</span>
+                            </div>
+                            <div class="skills_bar">
+                                <span :class="isDark ? 'skills_percentage_dark' : 'skills_percentage_light'"
+                                    class=" skills_laravel_with_vue"></span>
+                            </div>
+                        </div>
+                        <div class="skills_data">
+                            <div class="skills_titles">
+                                <h3 class="skills_name"><font-awesome-icon icon="fa-solid fa-pen-nib" />&nbsp;
+                                    Learn new techniques</h3>
                                 <span class="skills_number">85%</span>
                             </div>
                             <div class="skills_bar">
-                                <span class="skills_percentage skills_photoshop"></span>
+                                <span :class="isDark ? 'skills_percentage_dark' : 'skills_percentage_light'"
+                                    class=" skills_learn"></span>
                             </div>
                         </div>
                     </div>
@@ -552,7 +556,131 @@ export default {
             </div>
         </div>
     </section>
-    <button @click="scrollToTop" ref="topButton" class="hide_top_button" style="color: white;"> &nbsp; <font-awesome-icon
-            icon="fa-solid fa-arrow-alt-circle-up" />&nbsp;
-    </button>
-</template>
+    <!-- *******************************************************end_skills******************************************************************************* -->
+    <!-- *******************************************************start_Services******************************************************************************* -->
+    <!--==================== Services ====================-->
+
+    <some-component ref="services"></some-component>
+
+    <section :dir="$t('site.dir')" class="services section"
+        :class="isDark ? 'color_dark area_dark' : 'color_night area_light'" style="   padding-top: 8rem;">
+
+        <h2 v-motion-pop class="section__title" :class="isDark ? 'color_dark' : 'color_night'">services</h2>
+        <span class="section__subtitle" style="    margin-bottom: 2.1rem !important;">What is offer</span>
+
+
+        <div class="container">
+
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="p-lg-5 p-4 shadow">
+                        <div class="lc-block mb-4 "><img alt="" class="img-fluid services_img" src="./assets/img/services1.png">
+
+
+                            <h4 class="my-3" editable="inline"></h4>
+                            <h2>Front-end Developer</h2>
+                            <hr />
+
+                            <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                                single-page personal website
+                            </p>
+                            <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                                Multi-section website
+                            </p>
+                            <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                                Responsive Website with all screen size
+                            </p>
+                            <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                                Multiple languages and Dark Mood
+                            </p>
+                            <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                                Designing icons, images and other files
+                            </p>
+                            <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                                Movement, making the site come alive
+                            </p>
+
+
+                            <a class="btn btn-outline-primary" href="#" role="button">Read more</a>
+                        </div><!-- /lc-block -->
+                    </div>
+                </div><!-- /col -->
+                <div class="col-md-4">
+                    <div class="p-lg-5 p-4 shadow">
+                        <div class="lc-block mb-4">
+                            <img alt="" class="img-fluid services_img" src="./assets/img/services1.png">
+
+                            <h4 class="my-3" editable="inline"></h4>
+                            <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a
+                                lacus est.&nbsp;</p>
+
+
+                            <a class="btn btn-outline-primary" href="#" role="button">Read more</a>
+                        </div><!-- /lc-block -->
+                    </div>
+                </div><!-- /col -->
+                <div class="col-md-4">
+                    <div class="p-lg-5 p-4 shadow">
+                        <div class="lc-block mb-4">
+                            <img alt="" class="img-fluid services_img" src="./assets/img/services1.png">
+                            <h4 class="my-3" editable="inline"></h4>
+                            <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a
+                                lacus est.&nbsp;</p>
+
+                            <a class="btn btn-outline-primary" href="#" role="button">Read more</a>
+                        </div><!-- /lc-block -->
+                    </div>
+                </div><!-- /col -->
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="p-lg-5 p-4 shadow">
+                        <div class="lc-block mb-4">
+                            <img alt="" class="img-fluid" src="https://cdn.livecanvas.com/media/svg/undraw/delivery.svg"
+                                style="height:10vh">
+
+                            <h4 class="my-3" editable="inline"></h4>
+                            <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a
+                                lacus est.&nbsp;</p>
+
+                            <a class="btn btn-outline-primary" href="#" role="button">Read more</a>
+                        </div><!-- /lc-block -->
+                    </div>
+                </div><!-- /col -->
+                <div class="col-md-4">
+                    <div class="p-lg-5 p-4 shadow">
+                        <div class="lc-block mb-4">
+                            <img alt="" class="img-fluid" src="https://cdn.livecanvas.com/media/svg/undraw/no-data.svg"
+                                style="height:10vh">
+
+                            <h4 class="my-3" editable="inline"></h4>
+                            <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a
+                                lacus est.&nbsp;</p>
+
+                            <a class="btn btn-outline-primary" href="#" role="button">Read more</a>
+                        </div><!-- /lc-block -->
+                    </div>
+                </div><!-- /col -->
+                <div class="col-md-4">
+                    <div class="p-lg-5 p-4 shadow">
+                        <div class="lc-block mb-4">
+                            <img alt="" class="img-fluid" src="https://cdn.livecanvas.com/media/svg/undraw/select.svg"
+                                style="height:10vh">
+
+                        <h4 class="my-3" editable="inline"></h4>
+                        <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a
+                            lacus est.&nbsp;</p>
+
+
+                        <a class="btn btn-outline-primary" href="#" role="button">Read more</a>
+                    </div><!-- /lc-block -->
+                </div>
+            </div><!-- /col -->
+        </div>
+    </div>
+</section>
+
+
+<button @click="scrollToTop" ref="topButton" class="hide_top_button" style="color: white;"> &nbsp; <font-awesome-icon
+        icon="fa-solid fa-arrow-alt-circle-up" />&nbsp;
+</button></template>
