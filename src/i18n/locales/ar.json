@@ -5,6 +5,7 @@
     "fr": "Franch"
   },
   "site": {
+    "name": "مـحمد الامـين",
     "dir": "rtl",
     "bootstrap": "bootstrap"
   },
@@ -17,6 +18,7 @@
     "portfolio": "معرض الاعمال"
   },
   "home": {
+    "section_style":"home_section_ar",
     "home_image_transform_scaleX":"home_img_transform_scaleX",
     "back_img": "background:url(../../../src/assets/img/home_back_rtl.jpg)  center / cover no-repeat;",
     "welcame": "مـرحبا .. موقع المبرمج محمد الامين",

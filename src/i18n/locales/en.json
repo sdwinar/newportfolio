@@ -18,6 +18,7 @@
     "portfolio": "Portfolio"
   },
   "home": {
+    "section_style":"home_section_en",
     "back_img": "background:url(../../../src/assets/img/home_back_ltr.jpg)  center / cover no-repeat;",
     "welcame": "Hi ... I am Mohammed Alamin",
     "welcome_class": "welcome_en_class",

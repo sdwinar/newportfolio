@@ -233,8 +233,9 @@ export default {
 
     <!--==================== HOME ====================-->
     <some-component ref="home"></some-component>
-    <section :dir="$t('site.dir')" :class="isDark ? 'color_dark area_dark' : 'color_light area_light'"
-        class="home section area" id="home" style="height: 100vh;    padding-top: 14rem;">
+    <section :dir="$t('site.dir')" :class="($t('home.section_style'))+' '+(isDark ? 'color_dark area_dark' : 'color_light area_light')" 
+    class="home section area" id="home"
+       >
 
         <!-- <ul class="circles">
             <li :class="isDark ? 'circles_li_dark' : 'circles_li_light'"></li>
@@ -255,8 +256,10 @@ export default {
                         <div editable="rich">
                             <section>
                                 <div :class="isDark ? 'content_dark' : 'content_light'">
-                                    <h2 :class="$t('home.welcome_class')">{{ $t('home.welcame') }}</h2>
-                                    <h2 :class="$t('home.welcome_class')">{{ $t('home.welcame') }}</h2>
+                                    <h2  :class="$t('home.welcome_class')">{{
+                                        $t('home.welcame') }}</h2>
+                                    <h2  :class="$t('home.welcome_class')">{{
+                                        $t('home.welcame') }}</h2>
                                 </div>
                             </section><br />
 
@@ -574,7 +577,8 @@ export default {
             <div class="row mt-4">
                 <div class="col-md-4">
                     <div class="p-lg-5 p-4 shadow">
-                        <div class="lc-block mb-4 "><img alt="" class="img-fluid services_img" src="./assets/img/services1.png">
+                        <div class="lc-block mb-4 "><img alt="" class="img-fluid services_img"
+                                src="./assets/img/services1.png">
 
 
                             <h4 class="my-3" editable="inline"></h4>
@@ -667,20 +671,21 @@ export default {
                             <img alt="" class="img-fluid" src="https://cdn.livecanvas.com/media/svg/undraw/select.svg"
                                 style="height:10vh">
 
-                        <h4 class="my-3" editable="inline"></h4>
-                        <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a
-                            lacus est.&nbsp;</p>
+                            <h4 class="my-3" editable="inline"></h4>
+                            <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a
+                                lacus est.&nbsp;</p>
 
 
-                        <a class="btn btn-outline-primary" href="#" role="button">Read more</a>
-                    </div><!-- /lc-block -->
-                </div>
-            </div><!-- /col -->
+                            <a class="btn btn-outline-primary" href="#" role="button">Read more</a>
+                        </div><!-- /lc-block -->
+                    </div>
+                </div><!-- /col -->
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
-<button @click="scrollToTop" ref="topButton" class="hide_top_button" style="color: white;"> &nbsp; <font-awesome-icon
-        icon="fa-solid fa-arrow-alt-circle-up" />&nbsp;
-</button></template>
+    <button @click="scrollToTop" ref="topButton" class="hide_top_button" style="color: white;"> &nbsp; <font-awesome-icon
+            icon="fa-solid fa-arrow-alt-circle-up" />&nbsp;
+    </button>
+</template>
