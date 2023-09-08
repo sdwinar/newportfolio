@@ -233,9 +233,9 @@ export default {
 
     <!--==================== HOME ====================-->
     <some-component ref="home"></some-component>
-    <section :dir="$t('site.dir')" :class="($t('home.section_style'))+' '+(isDark ? 'color_dark area_dark' : 'color_light area_light')" 
-    class="home section area" id="home"
-       >
+    <section :dir="$t('site.dir')"
+        :class="($t('home.section_style')) + ' ' + (isDark ? 'color_dark area_dark' : 'color_light area_light')"
+        class="home section area" id="home">
 
         <!-- <ul class="circles">
             <li :class="isDark ? 'circles_li_dark' : 'circles_li_light'"></li>
@@ -256,9 +256,9 @@ export default {
                         <div editable="rich">
                             <section>
                                 <div :class="isDark ? 'content_dark' : 'content_light'">
-                                    <h2  :class="$t('home.welcome_class')">{{
+                                    <h2 :class="$t('home.welcome_class')">{{
                                         $t('home.welcame') }}</h2>
-                                    <h2  :class="$t('home.welcome_class')">{{
+                                    <h2 :class="$t('home.welcome_class')">{{
                                         $t('home.welcame') }}</h2>
                                 </div>
                             </section><br />
@@ -605,82 +605,82 @@ export default {
                             </p>
 
 
-                            <a class="btn btn-outline-primary" href="#" role="button">Read more</a>
+                            <!-- <a class="btn btn-outline-primary" href="#" role="button">Read more</a> -->
                         </div><!-- /lc-block -->
                     </div>
                 </div><!-- /col -->
                 <div class="col-md-4">
                     <div class="p-lg-5 p-4 shadow">
-                        <div class="lc-block mb-4">
-                            <img alt="" class="img-fluid services_img" src="./assets/img/services1.png">
+                        <div class="lc-block mb-4 "><img alt="" class="img-fluid services_img"
+                                src="./assets/img/services1.png">
+
 
                             <h4 class="my-3" editable="inline"></h4>
-                            <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a
-                                lacus est.&nbsp;</p>
+                            <h2>back-end Developer</h2>
+                            <hr />
+
+                            <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                                Create, integrate and manage databases
+                            </p>
+                            <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                                Connection with servers and databases </p>
+                            <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                                All types of system reports
+                            </p>
+                            <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                                High quality to speed up the system
+                            </p>
+                            <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                                Updates and backups constantly
+                            </p>
+                            <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                                Hosting the system on Internet servers
+                            </p>
 
 
-                            <a class="btn btn-outline-primary" href="#" role="button">Read more</a>
+                            <!-- <a class="btn btn-outline-primary" href="#" role="button">Read more</a> -->
                         </div><!-- /lc-block -->
                     </div>
                 </div><!-- /col -->
                 <div class="col-md-4">
                     <div class="p-lg-5 p-4 shadow">
-                        <div class="lc-block mb-4">
-                            <img alt="" class="img-fluid services_img" src="./assets/img/services1.png">
-                            <h4 class="my-3" editable="inline"></h4>
-                            <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a
-                                lacus est.&nbsp;</p>
+                        <div class="lc-block mb-4 "><img alt="" class="img-fluid services_img"
+                                src="./assets/img/services1.png">
 
-                            <a class="btn btn-outline-primary" href="#" role="button">Read more</a>
+
+                            <h4 class="my-3" editable="inline"></h4>
+                            <h2>Other Services</h2>
+                            <hr />
+
+                            <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                                Participation in projects development
+                            </p>
+                            <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                                Data analysis and processing
+                                                        </p>
+                            <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                                Mobile app to view the website
+                                                         </p>
+                            <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                                Teaching programming
+                                                        </p>
+                            <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                                Design and edit photos and videos
+                                                        </p>
+                     
+                            <!-- <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                                Hosting the system on Internet servers
+                            </p> -->
+
+
+                            <!-- <a class="btn btn-outline-primary" href="#" role="button">Read more</a> -->
                         </div><!-- /lc-block -->
                     </div>
                 </div><!-- /col -->
+
+
             </div>
-            <div class="row mt-4">
-                <div class="col-md-4">
-                    <div class="p-lg-5 p-4 shadow">
-                        <div class="lc-block mb-4">
-                            <img alt="" class="img-fluid" src="https://cdn.livecanvas.com/media/svg/undraw/delivery.svg"
-                                style="height:10vh">
 
-                            <h4 class="my-3" editable="inline"></h4>
-                            <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a
-                                lacus est.&nbsp;</p>
-
-                            <a class="btn btn-outline-primary" href="#" role="button">Read more</a>
-                        </div><!-- /lc-block -->
-                    </div>
-                </div><!-- /col -->
-                <div class="col-md-4">
-                    <div class="p-lg-5 p-4 shadow">
-                        <div class="lc-block mb-4">
-                            <img alt="" class="img-fluid" src="https://cdn.livecanvas.com/media/svg/undraw/no-data.svg"
-                                style="height:10vh">
-
-                            <h4 class="my-3" editable="inline"></h4>
-                            <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a
-                                lacus est.&nbsp;</p>
-
-                            <a class="btn btn-outline-primary" href="#" role="button">Read more</a>
-                        </div><!-- /lc-block -->
-                    </div>
-                </div><!-- /col -->
-                <div class="col-md-4">
-                    <div class="p-lg-5 p-4 shadow">
-                        <div class="lc-block mb-4">
-                            <img alt="" class="img-fluid" src="https://cdn.livecanvas.com/media/svg/undraw/select.svg"
-                                style="height:10vh">
-
-                            <h4 class="my-3" editable="inline"></h4>
-                            <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a
-                                lacus est.&nbsp;</p>
-
-
-                            <a class="btn btn-outline-primary" href="#" role="button">Read more</a>
-                        </div><!-- /lc-block -->
-                    </div>
-                </div><!-- /col -->
-            </div>
         </div>
     </section>
 

@@ -6,7 +6,7 @@ img.img-fluid.mx-auto.d-block {
   margin-bottom: 130px;
 }
 .home_img_transform_scaleX{
-  transform: scaleX(1);
+  transform: rotatey(180deg) translatey(15px); 
 }
 @media screen and (min-width: 968px) {
   .home_section_ar {
@@ -108,6 +108,30 @@ img.img-fluid.mx-auto.d-block {
 }
 
 @media only screen and (width <= 425px) AND (width > 375px ){
+  .img_home_dev {
+    display: none !important;
+}
+  .welcome_ar_class {
+    font-size: calc(5vw - 9%);
+    margin-top: calc(1vw - 0.5%);
+    margin-left: calc(1vw - 0%);
+    margin-bottom: calc(0vw - 0%);
+    margin-right: calc(0vw - 33.5%);
+
+
+  }
+  .welcome_en_class {
+  
+    font-size: calc(5vw - 9%);
+    margin-top: calc(1vw - 0.5%);
+    margin-left: calc(1vw - -30%);
+    margin-bottom: calc(0vw - 0%);
+    margin-right: calc(0vw - 0%);
+
+
+  }
+}
+@media only screen and (width <= 375px) AND (width > 100px ){
   .img_home_dev {
     display: none !important;
 }
