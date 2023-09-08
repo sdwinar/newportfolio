@@ -83,7 +83,7 @@ img.img-fluid.mx-auto.d-block {
 }
 
 @media only screen and (width <= 768px) AND (width > 425px ){
-  img.home_img_transform_scaleX.img-fluid.mx-auto.d-block {
+  .img_home_dev {
     display: none !important;
 }
   .welcome_ar_class {
@@ -108,7 +108,7 @@ img.img-fluid.mx-auto.d-block {
 }
 
 @media only screen and (width <= 425px) AND (width > 375px ){
-  img.home_img_transform_scaleX.img-fluid.mx-auto.d-block {
+  .img_home_dev {
     display: none !important;
 }
   .welcome_ar_class {

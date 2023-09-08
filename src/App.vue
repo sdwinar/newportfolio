@@ -328,7 +328,7 @@ export default {
                 </div><!-- /col -->
                 <div v-motion :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0, scale: 1 }"
                     :variants="{ custom: { scale: 2 } }" :hovered="{ scale: 1.2 }" :delay="200"
-                    class="col-12 col-md-5 col-lg-6">
+                    class="col-12 col-md-5 col-lg-6 img_home_dev">
                     <div class="lc-block"><img alt="" :class="$t('home.home_image_transform_scaleX')"
                             class="img-fluid mx-auto d-block" src="./assets/img/home.png">
                     </div><!-- /lc-block -->
