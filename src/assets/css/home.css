@@ -1,0 +1,10 @@
+img.img-fluid.mx-auto.d-block {
+  border: 1px solid;
+  border-radius: 20%;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+.home_img_transform_scaleX{
+  transform: scaleX(1);
+}

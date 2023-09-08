@@ -1,0 +1,27 @@
+{
+    "locale": {
+      "ar": "arabic",
+      "en": "englishua",
+      "fr": "francec"
+    },
+    "site": {
+      "dir": "ltr",
+      "bootstrap": "bootstrap"
+    },
+    "nav": {
+      "my_name": "Mohammed Alamin",
+      "home": "hogu",
+      "about": "abuto"
+    },
+    "home": {
+      "back_img": "background:url(../../../src/assets/img/home_back_ltr.jpg)  center / cover no-repeat;",
+      "welcame": "Salut .. Je suis l'ingénieur Mohammed Alamin",
+      "header": "Добро пожаловать в руководство Vue 3 I18n!",
+      "created_by": "Это руководство создано для вас компанией {company}.",
+      "num_visits": "Страницу не посещали :( | Страницу посетили {n} раз | Страницу посетили {n} раза | Страницу посетили {n} раз"
+    },
+    "about": {
+      "header": "О нас",
+      "donations": "Пожертвований собрано: {donations}"
+    }
+  }

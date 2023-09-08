@@ -1,0 +1,21 @@
+button{
+    background-color: rgba(240, 248, 255, 0) !important;
+    border: none !important;
+    font-weight: bold !important;
+}
+button.btn_dark {
+    color: white !important;
+    background-color: black !important;
+}
+button.btn_light {
+    color: rgb(0, 0, 0) !important;
+    background-color: white !important;
+}
+button.nav-link.btn_light.router-link-active{
+    color: #ff9393 !important;
+    font-weight: bold !important;
+}
+button.nav-link.btn_dark.router-link-active{
+ color: #03a9f4  !important;
+    font-weight: bold !important;
+}
