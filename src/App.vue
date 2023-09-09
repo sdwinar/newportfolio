@@ -12,6 +12,7 @@ const home = ref(null)
 const skills = ref(null)
 const services = ref(null)
 const Qualification = ref(null)
+const projects = ref(null)
 
 function scrollToAbout() {
     About.value.scrollIntoView({ behavior: 'smooth' })
@@ -27,6 +28,8 @@ function scrollToServices() {
 }
 function scrollToQualification() {
     Qualification.value.scrollIntoView({ behavior: 'smooth' })
+}function scrollToProjects() {
+    projects.value.scrollIntoView({ behavior: 'smooth' })
 }
 function scrollToTop() {
     window.scrollTo(0, 0);
@@ -37,6 +40,8 @@ onMounted(() => {
     var prev = window.pageYOffset;
 
     const home_link = ref(null);
+
+    handleScroll()
 
 
     // home_link.classList.add("router-link-active");
@@ -87,6 +92,7 @@ export default {
             const skills_link = this.$refs.skills_link;
             const services_link = this.$refs.services_link;
             const qualification_link = this.$refs.qualification_link;
+            const portfolio_link = this.$refs.portfolio_link;
 
             if (prev >= 0 && prev < 700) {
                 home_link.classList.add("router-link-active");
@@ -94,37 +100,49 @@ export default {
                 skills_link.classList.remove("router-link-active");
                 services_link.classList.remove("router-link-active");
                 qualification_link.classList.remove("router-link-active");
+                portfolio_link.classList.remove("router-link-active");
 
 
-            } else if (prev >= 700 && prev < 1400) {
+            } else if (prev >= 700 && prev < 1250) {
                 home_link.classList.remove("router-link-active");
                 about_link.classList.add("router-link-active");
                 skills_link.classList.remove("router-link-active");
                 services_link.classList.remove("router-link-active");
                 qualification_link.classList.remove("router-link-active");
+                portfolio_link.classList.remove("router-link-active");
 
-            } else if (prev >= 1400 && prev < 2364) {
+            } else if (prev >= 1250 && prev < 2140) {
                 home_link.classList.remove("router-link-active");
                 about_link.classList.remove("router-link-active");
                 qualification_link.classList.add("router-link-active");
                 services_link.classList.remove("router-link-active");
                 skills_link.classList.remove("router-link-active");
+                portfolio_link.classList.remove("router-link-active");
 
-            } else if (prev >= 2364 && prev < 3070) {
+            } else if (prev >= 2140 && prev < 2820) {
                 home_link.classList.remove("router-link-active");
                 about_link.classList.remove("router-link-active");
                 skills_link.classList.add("router-link-active");
                 services_link.classList.remove("router-link-active");
                 qualification_link.classList.remove("router-link-active");
+                portfolio_link.classList.remove("router-link-active");
 
-            } else if (prev >= 3070 && prev < 8000) {
+            } else if (prev >= 2820 && prev < 3580) {
                 home_link.classList.remove("router-link-active");
                 about_link.classList.remove("router-link-active");
                 skills_link.classList.remove("router-link-active");
                 services_link.classList.add("router-link-active");
                 qualification_link.classList.remove("router-link-active");
-
+                portfolio_link.classList.remove("router-link-active");
+            }else if (prev >= 3580 && prev < 10000) {
+                home_link.classList.remove("router-link-active");
+                about_link.classList.remove("router-link-active");
+                skills_link.classList.remove("router-link-active");
+                services_link.classList.remove("router-link-active");
+                qualification_link.classList.remove("router-link-active");
+                portfolio_link.classList.add("router-link-active");
             }
+
 
 
 
@@ -156,6 +174,21 @@ export default {
     <!-- *******************************************************start_nav******************************************************************************* -->
     <nav v-motion-roll-top :dir="$t('site.dir')" class="navbar navbar-expand-lg fixed-top area"
         :class="isDark ? 'area_dark' : 'area_light'">
+
+        <!-- <div  :class="isDark ? 'area_dark' : 'area_light'">
+    <ul class="circles">
+            <li :class="isDark ? 'circles_li_dark' : 'circles_li_light'"></li>
+            <li :class="isDark ? 'circles_li_dark' : 'circles_li_light'"></li>
+            <li :class="isDark ? 'circles_li_dark' : 'circles_li_light'"></li>
+            <li :class="isDark ? 'circles_li_dark' : 'circles_li_light'"></li>
+            <li :class="isDark ? 'circles_li_dark' : 'circles_li_light'"></li>
+            <li :class="isDark ? 'circles_li_dark' : 'circles_li_light'"></li>
+            <li :class="isDark ? 'circles_li_dark' : 'circles_li_light'"></li>
+            <li :class="isDark ? 'circles_li_dark' : 'circles_li_light'"></li>
+            <li :class="isDark ? 'circles_li_dark' : 'circles_li_light'"></li>
+            <li :class="isDark ? 'circles_li_dark' : 'circles_li_light'"></li>
+        </ul>
+    </div> -->
 
         <div class="container position-relative py-lg-4">
 
@@ -213,6 +246,27 @@ export default {
                                 :class="isDark ? 'btn_dark' : 'btn_light'">
                                 &nbsp; <font-awesome-icon icon="fa-solid fa-server" />&nbsp; {{ $t('nav.services') }}
                             </button>
+                        </li>
+                    </ul> <!-- /lc_nav_menu -->
+                </div>
+
+                <div :class="isDark ? 'color_dark ' : 'color_light '" lc-helper="shortcode" class="live-shortcode ms-auto">
+                    <!--  lc_nav_menu -->
+                    <ul  id="menu-secondary" class="navbar-nav me-auto mb-2 mb-md-0 navbar-nav">
+                        <li
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item nav-item-33131">
+                            <a ref="portfolio_link" :class="isDark ? 'color_dark ' : 'color_light '" href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"
+                                data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
+                                &nbsp; <font-awesome-icon icon="fa-solid fa-briefcase" />&nbsp;{{ $t('nav.portfolio') }}</a>
+                            <ul  :class="isDark ? 'dropdown_dark' : 'dropdown_light'" class="dropdown-menu  depth_0">
+                                <li>
+                            <button ref="projects_link" :class="isDark ? 'color_dark ' : 'color_light '"
+                             @click="scrollToProjects" class="nav-link">
+                                &nbsp; <font-awesome-icon icon="fa-solid fa-code" />&nbsp; {{ $t('nav.projects') }}
+                            </button>
+                        </li>
+                     
+                            </ul>
                         </li>
                     </ul> <!-- /lc_nav_menu -->
                 </div>
@@ -328,25 +382,34 @@ export default {
                         </div>
                     </div><!-- /lc-block -->
                     <div v-motion-roll-bottom class="lc-block d-flex mb-5">
-                        <div class="pe-3">
+                        <!-- <div class="pe-3">
                             <h3 class="h2 mb-0 text-secondary" editable="inline"><font-awesome-icon
-                                    style="margin-left:20px;font-size: 18px;" icon="fa-brands fa-github" /></h3>
-                        </div>
+                                    style="margin-left:20px;" icon="fa-brands fa-github" /></h3>
+                        </div> -->
                         <!-- <div class="border-start"></div> -->
+                        <div v-motion-roll-bottom class="ps-3">
+                            <h3 class="h2 mb-0 text-secondary" editable="inline">
+                                <a href="https://wa.me/+249117485242" target="_blank">
+                                <font-awesome-icon style="margin-left:20px" icon="fa-brands fa-whatsapp" />
+                            </a>
+                            </h3>
+                        </div>
+
+    
+                        <!-- <div class="border-start"></div> -->
+      
+                        <div v-motion-roll-bottom class="ps-3">
+                            <h3 class="h2 mb-0 text-secondary" editable="inline">
+                                <a href="https://wa.me/+249117485242" target="_blank">
+                                <font-awesome-icon style="margin-left:20px;" icon="fa- fa-envelope" />
+                                </a>
+                            </h3>
+                        </div>
                         <div v-motion-roll-bottom class="px-3">
                             <h3 class="h2 mb-0 text-secondary" editable="inline">
-                                <font-awesome-icon style="margin-left:20px;font-size: 18px;" icon="fa-brands fa-linkedin" />
-                            </h3>
-                        </div>
-                        <!-- <div class="border-start"></div> -->
-                        <div v-motion-roll-bottom class="ps-3">
-                            <h3 class="h2 mb-0 text-secondary" editable="inline">
-                                <font-awesome-icon style="margin-left:20px;font-size: 18px;" icon="fa-brands fa-whatsapp" />
-                            </h3>
-                        </div>
-                        <div v-motion-roll-bottom class="ps-3">
-                            <h3 class="h2 mb-0 text-secondary" editable="inline">
-                                <font-awesome-icon style="margin-left:20px;font-size: 18px;" icon="fa- fa-envelope" />
+                                <a href="https://wa.me/+249117485242" target="_blank">
+                                <font-awesome-icon style="margin-left:20px;" icon="fa-brands fa-linkedin" />
+                                </a>
                             </h3>
                         </div>
                     </div><!-- /lc-block -->
@@ -371,7 +434,7 @@ export default {
     <!--==================== ABOUT ====================-->
     <some-component ref="About"></some-component>
     <section :dir="$t('site.dir')" :class="isDark ? 'color_dark area_dark' : 'color_light area_light'"
-        class="home section area" id="home" style="height: 100vh;    padding-top: 10rem;">
+        class="home section area" id="home" style="height: auto;    padding-top: 10rem;">
         <!-- <ul class="circles">
             <li :class="isDark ? 'circles_li_dark' : 'circles_li_light'"></li>
             <li :class="isDark ? 'circles_li_dark' : 'circles_li_light'"></li>
@@ -432,7 +495,7 @@ export default {
         class="qualification section">
         <h2 v-motion-pop class="section__title" :class="isDark ? 'color_dark' : 'color_night'" style="margin-top: 2%;">
             Qualification</h2>
-        <span class="section__subtitle">My personal journel</span>
+        <span class="section__subtitle">My personal journel</span><br />
 
         <span class="section__subtitle">Education & Work</span>
 
@@ -479,13 +542,13 @@ export default {
                         </div>
 
                     </div>
-                    <!--============= QUALIFICATION 1 ===========-->
+                    <!--============= QUALIFICATION 3 ===========-->
                     <div class="qualification_data">
                         <div>
-                            <h3 :class="$t('qualification.qualification_title')" class="qualification_title">Computer
-                                Engineering</h3>
-                            <span :class="$t('qualification.qualification_title')"
-                                class="qualification_subtitle">Sennar-University</span>
+                            <h3 :class="$t('qualification.qualification_title')" class="qualification_title">Wireless
+                                technician</h3>
+                            <span :class="$t('qualification.qualification_title')" class="qualification_subtitle">Al Junaid
+                                Sugar Factory</span>
 
                             <div :class="$t('qualification.qualification_title')" class="qualificaation_calender">
                                 <i class="uil uil-calender-alt"></i>
@@ -498,7 +561,7 @@ export default {
                             <span :class="isDark ? 'qualification_line_dark' : 'qualification_line_light'"></span>
                         </div>
                     </div>
-                    <!--============= QUALIFICATION 2 ===========-->
+                    <!--============= QUALIFICATION 4 ===========-->
                     <div class="qualification_data">
                         <div></div>
 
@@ -508,8 +571,8 @@ export default {
                         </div>
 
                         <div>
-                            <h3 class="qualification_title">Data entry</h3>
-                            <span class="qualification_subtitle">Halfa Sugar Factory</span>
+                            <h3 class="qualification_title">full-stack Web Developer</h3>
+                            <span class="qualification_subtitle">freelancer</span>
                             <div class="qualificaation_calender">
                                 <i class="uil uil-calender-alt"></i>
                                 2016 - Now
@@ -517,13 +580,13 @@ export default {
                         </div>
 
                     </div>
-                    <!--============= QUALIFICATION 1 ===========-->
+                    <!--============= QUALIFICATION 5 ===========-->
                     <div class="qualification_data">
                         <div>
-                            <h3 :class="$t('qualification.qualification_title')" class="qualification_title">Computer
-                                Engineering</h3>
-                            <span :class="$t('qualification.qualification_title')"
-                                class="qualification_subtitle">Sennar-University</span>
+                            <h3 :class="$t('qualification.qualification_title')" class="qualification_title">Programming
+                                Instructor</h3>
+                            <span :class="$t('qualification.qualification_title')" class="qualification_subtitle">Many
+                                Institutes</span>
 
                             <div :class="$t('qualification.qualification_title')" class="qualificaation_calender">
                                 <i class="uil uil-calender-alt"></i>
@@ -542,12 +605,11 @@ export default {
 
                         <div>
                             <span :class="isDark ? 'qualification_rounder_dark' : 'qualification_rounder_light'"></span>
-                            <span :class="isDark ? 'qualification_line_dark' : 'qualification_line_light'"></span>
                         </div>
 
                         <div>
-                            <h3 class="qualification_title">Data entry</h3>
-                            <span class="qualification_subtitle">Halfa Sugar Factory</span>
+                            <h3 class="qualification_title">Programmer</h3>
+                            <span class="qualification_subtitle">Bayan Company</span>
                             <div class="qualificaation_calender">
                                 <i class="uil uil-calender-alt"></i>
                                 2022 - 2023
@@ -555,15 +617,7 @@ export default {
                         </div>
 
                     </div>
-                    <div class="qualification_data">
-                        <div></div>
-
-                        <div>
-                            <span :class="isDark ? 'qualification_rounder_dark' : 'qualification_rounder_light'"></span>
-                        </div>
-
-                    </div>
-
+               
 
                 </div>
 
@@ -832,32 +886,400 @@ export default {
                             </p>
                             <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
                                 Mobile app to view the website
-                            </p>
-                            <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
-                                Teaching programming
-                            </p>
-                            <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
-                                Design and edit photos and videos
-                            </p>
+                        </p>
+                        <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                            Teaching programming
+                        </p>
+                        <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                            Design and edit photos and videos
+                        </p>
 
-                            <!-- <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                        <!-- <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
                                 Hosting the system on Internet servers
                             </p> -->
 
 
-                            <!-- <a class="btn btn-outline-primary" href="#" role="button">Read more</a> -->
-                        </div><!-- /lc-block -->
-                    </div>
-                </div><!-- /col -->
+                        <!-- <a class="btn btn-outline-primary" href="#" role="button">Read more</a> -->
+                    </div><!-- /lc-block -->
+                </div>
+            </div><!-- /col -->
 
-
-            </div>
 
         </div>
-    </section>
+
+    </div>
+</section>
+
+    <!-- *******************************************************end_services******************************************************************************* -->
+    <!-- *******************************************************start_project******************************************************************************* -->
+    <!--==================== Services ====================-->
+
+    <some-component ref="projects"></some-component>
+
+    <section :dir="$t('site.dir')" class="services section"
+        :class="isDark ? 'color_dark area_dark' : 'color_night area_light'" style="   padding-top: 8rem;">
+
+        <h2 v-motion-pop class="section__title" :class="isDark ? 'color_dark' : 'color_night'">Projects</h2>
+        <span class="section__subtitle" style="    margin-bottom: 2.1rem !important;">Some of my projects</span>
+
+         
+  
+    <div class="container py-5">
+   <div class="row mb-lg-4">
+      <div class="col-12 col-lg-4 mb-4 mb-lg-0">
+         <div class="lc-block mb-3">
+            <img class="img-fluid" src="./assets/img/projects/01.png" style="    height: 37vh;"
+             alt="Photo by Laika Notebooks" loading="lazy">
+         </div>
+         <!-- /lc-block -->
+         <div class="lc-block text-center mb-3">
+            <div editable="rich">
+               <h3 class="fw-light">SUSS</h3>
+            </div>
+         </div>
+         <!-- /lc-block -->
+         <div class="lc-block text-center mb-4">
+            <div editable="rich">
+               <p> A communication and service community for university students.</p>
+            </div>
+         </div>
+         <!-- /lc-block -->
+         <div class="lc-block text-center">
+            <a class="btn btn-link" href="https://mostaql.com/portfolio/942991"  target="_blank" role="button">Learn more</a>
+         </div>
+         <!-- /lc-block -->
+      </div>
+      <!-- /col -->
+      <div class="col-12 col-lg-4 mb-4 mb-lg-0">
+         <div class="lc-block mb-3">
+            <img class="img-fluid" src="./assets/img/projects/02.png" style="    height: 37vh;"
+             alt="Photo by Laika Notebooks" loading="lazy">
+         </div>
+         <!-- /lc-block -->
+         <div class="lc-block text-center mb-3">
+            <div editable="rich">
+               <h3 class="fw-light">SMS system V1.0</h3>
+            </div>
+         </div>
+         <!-- /lc-block -->
+         <div class="lc-block text-center mb-4">
+            <div editable="rich">
+               <p>Sales and store management system software</p>
+            </div>
+         </div>
+         <!-- /lc-block -->
+         <div class="lc-block text-center">
+            <a class="btn btn-link" href="https://mostaql.com/portfolio/942999"  target="_blank" role="button">Learn more</a>
+         </div>
+         <!-- /lc-block -->
+      </div>
+      <!-- /col -->
+      <div class="col-12 col-lg-4 mb-4 mb-lg-0">
+         <div class="lc-block mb-3">
+            <img class="img-fluid" src="./assets/img/projects/03.png" style="    height: 37vh;"
+             alt="Photo by Laika Notebooks" loading="lazy">
+         </div>
+         <!-- /lc-block -->
+         <div class="lc-block text-center mb-3">
+            <div editable="rich">
+               <h3 class="fw-light">SMS system V2.0</h3>
+            </div>
+         </div>
+         <!-- /lc-block -->
+         <div class="lc-block text-center mb-4">
+            <div editable="rich">
+               <p>Sales and store management system software</p>
+            </div>
+         </div>
+         <!-- /lc-block -->
+         <div class="lc-block text-center">
+            <a class="btn btn-link" href="https://mostaql.com/portfolio/943002"  target="_blank" role="button">Learn more</a>
+         </div>
+         <!-- /lc-block -->
+      </div>
+      <!-- /col -->
+     
+  
+   
+   </div>
+   <br/>
+   <hr/>
+   <br/>
+   <!-- **************************************************************************.......................................... -->
+   <div class="row mb-lg-4">
+      <div class="col-12 col-lg-4 mb-4 mb-lg-0">
+         <div class="lc-block mb-3">
+            
+            <img class="img-fluid" src="./assets/img/projects/04.png" style="    height: 37vh;"
+             alt="Photo by Laika Notebooks" loading="lazy">
+         </div>
+         <!-- /lc-block -->
+         <div class="lc-block text-center mb-3">
+            <div editable="rich">
+               <h3 class="fw-light">SUSS</h3>
+            </div>
+         </div>
+         <!-- /lc-block -->
+         <div class="lc-block text-center mb-4">
+            <div editable="rich">
+               <p> A communication and service community for university students.</p>
+            </div>
+         </div>
+         <!-- /lc-block -->
+         <div class="lc-block text-center">
+            <a class="btn btn-link" href="https://www.facebook.com/mhmd194/posts/3355814557971831?ref=embed_post"  target="_blank" role="button">Learn more</a>
+         </div>
+         <!-- /lc-block -->
+      </div>
+      <!-- /col -->
+      <div class="col-12 col-lg-4 mb-4 mb-lg-0">
+         <div class="lc-block mb-3">
+            <img class="img-fluid" src="./assets/img/projects/05.png" style="    height: 37vh;"
+             alt="Photo by Laika Notebooks" loading="lazy">
+         </div>
+         <!-- /lc-block -->
+         <div class="lc-block text-center mb-3">
+            <div editable="rich">
+               <h3 class="fw-light">SMS system V1.0</h3>
+            </div>
+         </div>
+         <!-- /lc-block -->
+         <div class="lc-block text-center mb-4">
+            <div editable="rich">
+               <p>Sales and store management system software</p>
+            </div>
+         </div>
+         <!-- /lc-block -->
+         <div class="lc-block text-center">
+            <a class="btn btn-link" href="https://mostaql.com/portfolio/942999"  target="_blank" role="button">Learn more</a>
+         </div>
+         <!-- /lc-block -->
+      </div>
+      <!-- /col -->
+      <div class="col-12 col-lg-4 mb-4 mb-lg-0">
+         <div class="lc-block mb-3">
+            <img class="img-fluid" src="./assets/img/projects/03.png" style="    height: 37vh;"
+             alt="Photo by Laika Notebooks" loading="lazy">
+         </div>
+         <!-- /lc-block -->
+         <div class="lc-block text-center mb-3">
+            <div editable="rich">
+               <h3 class="fw-light">SMS system V2.0</h3>
+            </div>
+         </div>
+         <!-- /lc-block -->
+         <div class="lc-block text-center mb-4">
+            <div editable="rich">
+               <p>Sales and store management system software</p>
+            </div>
+         </div>
+         <!-- /lc-block -->
+         <div class="lc-block text-center">
+            <a class="btn btn-link" href="https://mostaql.com/portfolio/943002"  target="_blank" role="button">Learn more</a>
+         </div>
+         <!-- /lc-block -->
+      </div>
+      <!-- /col -->
+     
+  
+   
+   </div>
+
+</div> 
+ 
+  
+
+        
+        </section>
+        <!-- ***********************************************************shar project***************************************** -->
+        <!-- ***********************************************************shar project***************************************** -->
+        <!-- ***********************************************************shar project***************************************** -->
+        <section class="skills section" :class="isDark ? 'color_dark area_dark' : 'color_night area_light'"
+        style="   padding-top: 8rem;">
+
+        
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css'>
+<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="news-slider" class="owl-carousel">
+                <div class="post-slide">
+                    <div class="post-img">
+                        <img src="https://images.unsplash.com/photo-1596265371388-43edbaadab94?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=501" alt="">
+                        <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
+                    </div>
+                    <div class="post-content">
+                        <h3 class="post-title">
+                            <a href="#">Lorem ipsum dolor sit amet.</a>
+                        </h3>
+                        <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......</p>
+                        <span class="post-date"><i class="fa fa-clock-o"></i>Out 27, 2019</span>
+                        <a href="#" class="read-more">read more</a>
+                    </div>
+                </div>
+
+                <div class="post-slide">
+                    <div class="post-img">
+                        <img src="https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=303&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=503" alt="">
+                        <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
+                    </div>
+                    <div class="post-content">
+                        <h3 class="post-title">
+                            <a href="#">Lorem ipsum dolor sit amet.</a>
+                        </h3>
+                        <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......</p>
+                        <span class="post-date"><i class="fa fa-clock-o"></i>Out 27, 2019</span>
+                        <a href="#" class="read-more">read more</a>
+                    </div>
+                </div>
+
+                <div class="post-slide">
+                    <div class="post-img">
+                        <img src="https://images.unsplash.com/photo-1564979268369-42032c5ca998?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=500" alt="">
+                        <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
+                    </div>
+                    <div class="post-content">
+                        <h3 class="post-title">
+                            <a href="#">Lorem ipsum dolor sit amet.</a>
+                        </h3>
+                        <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......</p>
+                        <span class="post-date"><i class="fa fa-clock-o"></i>Out 27, 2019</span>
+                        <a href="#" class="read-more">read more</a>
+                    </div>
+                </div>
+
+                <div class="post-slide">
+                    <div class="post-img">
+                        <img src="https://images.unsplash.com/photo-1576659531892-0f4991fca82b?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=501" alt="">
+                        <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
+                    </div>
+                    <div class="post-content">
+                        <h3 class="post-title">
+                            <a href="#">Lorem ipsum dolor sit amet.</a>
+                        </h3>
+                        <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......</p>
+                        <span class="post-date"><i class="fa fa-clock-o"></i>Out 27, 2019</span>
+                        <a href="#" class="read-more">read more</a>
+                    </div>
+                </div>
+
+                <div class="post-slide">
+                    <div class="post-img">
+                        <img src="https://images.unsplash.com/photo-1586083702768-190ae093d34d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=305&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=505" alt="">
+                        <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
+                    </div>
+                    <div class="post-content">
+                        <h3 class="post-title">
+                            <a href="#">Lorem ipsum dolor sit amet.</a>
+                        </h3>
+                        <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......</p>
+                        <span class="post-date"><i class="fa fa-clock-o"></i>Out 27, 2019</span>
+                        <a href="#" class="read-more">read more</a>
+                    </div>
+                </div>
+
+                <div class="post-slide">
+                    <div class="post-img">
+                        <img src="https://images.unsplash.com/photo-1484656551321-a1161420a2a0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=306&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=506" alt="">
+                        <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
+                    </div>
+                    <div class="post-content">
+                        <h3 class="post-title">
+                            <a href="#">Lorem ipsum dolor sit amet.</a>
+                        </h3>
+                        <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......</p>
+                        <span class="post-date"><i class="fa fa-clock-o"></i>Out 27, 2019</span>
+                        <a href="#" class="read-more">read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        </section>
+        <!-- ****************************************fpotter******************************************************************************* -->
+        <!-- ****************************************fpotter******************************************************************************* -->
+        <!-- ****************************************fpotter******************************************************************************* -->
+<div  :class="isDark ? 'area_dark' : 'area_light'" class="footer">
+	<div class="container">		
+		<div class="row text-center">						
+			<div class="col-lg-12 col-sm-12 col-xs-12">
+				<div class="footer_menu">
+					<ul>
+                        <li>
+                            <button ref="home_link" @click="scrollToHome" class="nav-link"
+                                :class="isDark ? 'btn_dark' : 'btn_light'">
+                                &nbsp;  {{ $t('nav.home') }}
+                            </button>
+                        </li>
+                        <li>
+                            <button ref="about_link" @click="scrollToAbout" class="nav-link"
+                                :class="isDark ? 'btn_dark' : 'btn_light'">
+                                &nbsp;  {{ $t('nav.about') }}
+                            </button>
+                        </li>
+                        <li>
+                            <button ref="qualification_link" @click="scrollToQualification" class="nav-link"
+                                :class="isDark ? 'btn_dark' : 'btn_light'">
+                                &nbsp;  {{ $t('nav.qualification') }}
+                            </button>
+                        </li>
+                        <li>
+                            <button ref="skills_link" @click="scrollToSkills" class="nav-link"
+                                :class="isDark ? 'btn_dark' : 'btn_light'">
+                                &nbsp;  {{ $t('nav.skills') }}
+                            </button>
+                        </li>
+
+                        <li>
+                            <button ref="services_link" @click="scrollToServices" class="nav-link"
+                                :class="isDark ? 'btn_dark' : 'btn_light'">
+                                &nbsp; {{ $t('nav.services') }}
+                            </button>
+                        </li>
+					</ul>
+				</div>						
+				<div class="footer_copyright">
+					<p :class="isDark ? 'color_dark' : 'color_light'">© 2021 Sai. All Rights Reserved.</p>
+				</div>	
+				<div class="footer_profile">
+					<ul>
+                        <LI v-motion-roll-bottom class="ps-3">
+                            <h3 class="h2 mb-0 text-secondary" editable="inline">
+                                <a href="https://wa.me/+249117485242" target="_blank">
+                                <font-awesome-icon style="margin-left:20px" icon="fa-brands fa-whatsapp" />
+                            </a>
+                            </h3>
+                        </LI>
+
+    
+                        <!-- <LI class="border-start"></LI> -->
+      
+                        <LI v-motion-roll-bottom class="ps-3">
+                            <h3 class="h2 mb-0 text-secondary" editable="inline">
+                                <a href="https://wa.me/+249117485242" target="_blank">
+                                <font-awesome-icon style="margin-left:20px;" icon="fa- fa-envelope" />
+                                </a>
+                            </h3>
+                        </LI>
+                        <LI v-motion-roll-bottom class="px-3">
+                            <h3 class="h2 mb-0 text-secondary" editable="inline">
+                                <a href="https://wa.me/+249117485242" target="_blank">
+                                <font-awesome-icon style="margin-left:20px;" icon="fa-brands fa-linkedin" />
+                                </a>
+                            </h3>
+                        </LI>
+					</ul>
+				</div>						
+			</div><!--- END COL -->							
+		</div><!--- END ROW -->					
+	</div><!--- END CONTAINER -->
+</div>
 
 
-    <button @click="scrollToTop" ref="topButton" class="hide_top_button" style="color: white;"> &nbsp; <font-awesome-icon
-            icon="fa-solid fa-arrow-alt-circle-up" />&nbsp;
-    </button>
-</template>
+
+<button @click="scrollToTop" ref="topButton" class="hide_top_button"  :class="isDark ? 'color_dark' : 'color_light'"> &nbsp; <font-awesome-icon
+        icon="fa-solid fa-arrow-alt-circle-up" />&nbsp;
+</button></template>

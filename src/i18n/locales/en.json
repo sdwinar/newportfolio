@@ -16,7 +16,8 @@
     "skills": "Skills",
     "services": "Services",
     "portfolio": "Portfolio",
-    "qualification": "Qualification"
+    "qualification": "Qualification",
+    "projects": "Projects"
   },
   "home": {
     "section_style":"home_section_en",
