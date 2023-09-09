@@ -15,7 +15,9 @@
     "about": "عني" ,
      "skills": "المهارات",
     "services": "الخدمات",
-    "portfolio": "معرض الاعمال"
+    "portfolio": "معرض الاعمال",
+    "qualification": "المؤهلات"
+
   },
   "home": {
     "section_style":"home_section_ar",
@@ -53,5 +55,8 @@
   "about": {
     "header": "О нас",
     "donations": "Пожертвований собрано: {donations}"
+  },
+  "qualification": { 
+    "qualification_title": "qualification_title_ar"
   }
 }

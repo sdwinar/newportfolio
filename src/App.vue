@@ -11,6 +11,7 @@ const About = ref(null)
 const home = ref(null)
 const skills = ref(null)
 const services = ref(null)
+const Qualification = ref(null)
 
 function scrollToAbout() {
     About.value.scrollIntoView({ behavior: 'smooth' })
@@ -23,6 +24,9 @@ function scrollToSkills() {
 }
 function scrollToServices() {
     services.value.scrollIntoView({ behavior: 'smooth' })
+}
+function scrollToQualification() {
+    Qualification.value.scrollIntoView({ behavior: 'smooth' })
 }
 function scrollToTop() {
     window.scrollTo(0, 0);
@@ -75,37 +79,51 @@ export default {
     },
 
     methods: {
-        handleScroll(event) {//this method on scroll
+        handleScroll(event) {//this method on scroll Qualification
             var prev = window.pageYOffset;
             console.log(prev)
             const home_link = this.$refs.home_link;
             const about_link = this.$refs.about_link;
             const skills_link = this.$refs.skills_link;
             const services_link = this.$refs.services_link;
+            const qualification_link = this.$refs.qualification_link;
 
             if (prev >= 0 && prev < 700) {
                 home_link.classList.add("router-link-active");
                 about_link.classList.remove("router-link-active");
                 skills_link.classList.remove("router-link-active");
                 services_link.classList.remove("router-link-active");
+                qualification_link.classList.remove("router-link-active");
+
 
             } else if (prev >= 700 && prev < 1400) {
                 home_link.classList.remove("router-link-active");
                 about_link.classList.add("router-link-active");
                 skills_link.classList.remove("router-link-active");
                 services_link.classList.remove("router-link-active");
+                qualification_link.classList.remove("router-link-active");
 
-            } else if (prev >= 1400 && prev < 2160) {
+            } else if (prev >= 1400 && prev < 2364) {
+                home_link.classList.remove("router-link-active");
+                about_link.classList.remove("router-link-active");
+                qualification_link.classList.add("router-link-active");
+                services_link.classList.remove("router-link-active");
+                skills_link.classList.remove("router-link-active");
+
+            } else if (prev >= 2364 && prev < 3070) {
                 home_link.classList.remove("router-link-active");
                 about_link.classList.remove("router-link-active");
                 skills_link.classList.add("router-link-active");
                 services_link.classList.remove("router-link-active");
+                qualification_link.classList.remove("router-link-active");
 
-            } else if (prev >= 2160 && prev < 2500) {
+            } else if (prev >= 3070 && prev < 8000) {
                 home_link.classList.remove("router-link-active");
                 about_link.classList.remove("router-link-active");
                 skills_link.classList.remove("router-link-active");
                 services_link.classList.add("router-link-active");
+                qualification_link.classList.remove("router-link-active");
+
             }
 
 
@@ -178,11 +196,18 @@ export default {
                             </button>
                         </li>
                         <li>
+                            <button ref="qualification_link" @click="scrollToQualification" class="nav-link"
+                                :class="isDark ? 'btn_dark' : 'btn_light'">
+                                &nbsp; <font-awesome-icon icon="fa-solid fa-server" />&nbsp; {{ $t('nav.qualification') }}
+                            </button>
+                        </li>
+                        <li>
                             <button ref="skills_link" @click="scrollToSkills" class="nav-link"
                                 :class="isDark ? 'btn_dark' : 'btn_light'">
                                 &nbsp; <font-awesome-icon icon="fa-solid fa-bomb" />&nbsp; {{ $t('nav.skills') }}
                             </button>
                         </li>
+
                         <li>
                             <button ref="services_link" @click="scrollToServices" class="nav-link"
                                 :class="isDark ? 'btn_dark' : 'btn_light'">
@@ -400,6 +425,153 @@ export default {
     </section>
 
     <!-- *******************************************************end_about******************************************************************************* -->
+    <!-- *******************************************************start_Qualification******************************************************************************* -->
+    <!--==================== QUALIFICATION ====================-->
+    <some-component ref="Qualification"></some-component>
+    <section :dir="$t('site.dir')" :class="isDark ? 'color_dark area_dark' : 'color_light area_light'"
+        class="qualification section">
+        <h2 v-motion-pop class="section__title" :class="isDark ? 'color_dark' : 'color_night'" style="margin-top: 2%;">
+            Qualification</h2>
+        <span class="section__subtitle">My personal journel</span>
+
+        <span class="section__subtitle">Education & Work</span>
+
+        <div class="qualification_container container">
+
+            <div class="qualification_sections">
+                <!--========== QUALIFICATION CONTENT 1 ==========-->
+                <div class="qualification_content qualification_active" data-content id="education">
+                    <!--============= QUALIFICATION 1 ===========-->
+                    <div class="qualification_data">
+                        <div>
+                            <h3 :class="$t('qualification.qualification_title')" class="qualification_title">Computer
+                                Engineering</h3>
+                            <span :class="$t('qualification.qualification_title')"
+                                class="qualification_subtitle">Sennar-University</span>
+
+                            <div :class="$t('qualification.qualification_title')" class="qualificaation_calender">
+                                <i class="uil uil-calender-alt"></i>
+                                2017 - 2021
+                            </div>
+
+                        </div>
+                        <div>
+                            <span :class="isDark ? 'qualification_rounder_dark' : 'qualification_rounder_light'"></span>
+                            <span :class="isDark ? 'qualification_line_dark' : 'qualification_line_light'"></span>
+                        </div>
+                    </div>
+                    <!--============= QUALIFICATION 2 ===========-->
+                    <div class="qualification_data">
+                        <div></div>
+
+                        <div>
+                            <span :class="isDark ? 'qualification_rounder_dark' : 'qualification_rounder_light'"></span>
+                            <span :class="isDark ? 'qualification_line_dark' : 'qualification_line_light'"></span>
+                        </div>
+
+                        <div>
+                            <h3 class="qualification_title">Data entry</h3>
+                            <span class="qualification_subtitle">Halfa Sugar Factory</span>
+                            <div class="qualificaation_calender">
+                                <i class="uil uil-calender-alt"></i>
+                                2012 - 2014
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--============= QUALIFICATION 1 ===========-->
+                    <div class="qualification_data">
+                        <div>
+                            <h3 :class="$t('qualification.qualification_title')" class="qualification_title">Computer
+                                Engineering</h3>
+                            <span :class="$t('qualification.qualification_title')"
+                                class="qualification_subtitle">Sennar-University</span>
+
+                            <div :class="$t('qualification.qualification_title')" class="qualificaation_calender">
+                                <i class="uil uil-calender-alt"></i>
+                                2014 - 2015
+                            </div>
+
+                        </div>
+                        <div>
+                            <span :class="isDark ? 'qualification_rounder_dark' : 'qualification_rounder_light'"></span>
+                            <span :class="isDark ? 'qualification_line_dark' : 'qualification_line_light'"></span>
+                        </div>
+                    </div>
+                    <!--============= QUALIFICATION 2 ===========-->
+                    <div class="qualification_data">
+                        <div></div>
+
+                        <div>
+                            <span :class="isDark ? 'qualification_rounder_dark' : 'qualification_rounder_light'"></span>
+                            <span :class="isDark ? 'qualification_line_dark' : 'qualification_line_light'"></span>
+                        </div>
+
+                        <div>
+                            <h3 class="qualification_title">Data entry</h3>
+                            <span class="qualification_subtitle">Halfa Sugar Factory</span>
+                            <div class="qualificaation_calender">
+                                <i class="uil uil-calender-alt"></i>
+                                2016 - Now
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--============= QUALIFICATION 1 ===========-->
+                    <div class="qualification_data">
+                        <div>
+                            <h3 :class="$t('qualification.qualification_title')" class="qualification_title">Computer
+                                Engineering</h3>
+                            <span :class="$t('qualification.qualification_title')"
+                                class="qualification_subtitle">Sennar-University</span>
+
+                            <div :class="$t('qualification.qualification_title')" class="qualificaation_calender">
+                                <i class="uil uil-calender-alt"></i>
+                                2021 - 2023
+                            </div>
+
+                        </div>
+                        <div>
+                            <span :class="isDark ? 'qualification_rounder_dark' : 'qualification_rounder_light'"></span>
+                            <span :class="isDark ? 'qualification_line_dark' : 'qualification_line_light'"></span>
+                        </div>
+                    </div>
+                    <!--============= QUALIFICATION 2 ===========-->
+                    <div class="qualification_data">
+                        <div></div>
+
+                        <div>
+                            <span :class="isDark ? 'qualification_rounder_dark' : 'qualification_rounder_light'"></span>
+                            <span :class="isDark ? 'qualification_line_dark' : 'qualification_line_light'"></span>
+                        </div>
+
+                        <div>
+                            <h3 class="qualification_title">Data entry</h3>
+                            <span class="qualification_subtitle">Halfa Sugar Factory</span>
+                            <div class="qualificaation_calender">
+                                <i class="uil uil-calender-alt"></i>
+                                2022 - 2023
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="qualification_data">
+                        <div></div>
+
+                        <div>
+                            <span :class="isDark ? 'qualification_rounder_dark' : 'qualification_rounder_light'"></span>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- *******************************************************end_qua******************************************************************************* -->
     <!-- *******************************************************start_skills******************************************************************************* -->
     <!--==================== ABOUT ====================-->
     <!--==================== SKILLS ====================-->
@@ -657,17 +829,17 @@ export default {
                             </p>
                             <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
                                 Data analysis and processing
-                                                        </p>
+                            </p>
                             <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
                                 Mobile app to view the website
-                                                         </p>
+                            </p>
                             <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
                                 Teaching programming
-                                                        </p>
+                            </p>
                             <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
                                 Design and edit photos and videos
-                                                        </p>
-                     
+                            </p>
+
                             <!-- <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
                                 Hosting the system on Internet servers
                             </p> -->

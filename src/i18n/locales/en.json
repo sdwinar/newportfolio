@@ -15,7 +15,8 @@
     "about": "About",
     "skills": "Skills",
     "services": "Services",
-    "portfolio": "Portfolio"
+    "portfolio": "Portfolio",
+    "qualification": "Qualification"
   },
   "home": {
     "section_style":"home_section_en",
@@ -34,5 +35,9 @@
   "about": {
     "header": "About us",
     "donations": "Donations raised: {donations}"
+  },
+  "qualification": {
+    "qualification_title": "qualification_title_en"
+    
   }
 }

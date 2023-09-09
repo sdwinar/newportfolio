@@ -5,13 +5,14 @@ import i18n from "./i18n"
 
 import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.js'
 
-import "./assets/css/animated_background.css";
+import "./assets/css/animated_background.css"; 
 import "./assets/css/nav.css";
 import "./assets/css/main.css";
 import "./assets/css/home.css";
 import "./assets/css/about.css";
 import "./assets/css/skills.css";
 import "./assets/css/services.css";
+import "./assets/css/qualification.css";
 import "./assets/css/home_text_animation.css";
 
 /* import the fontawesome core */
