@@ -8,5 +8,10 @@ $(document).ready(function () {
     navigationText: ["", ""],
     pagination: true,
     autoPlay: true });
+
+    $(".preventDefault").click(function(e){
+        e.preventDefault()
+
+    })
     
     });

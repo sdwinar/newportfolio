@@ -16,6 +16,7 @@ import "./assets/css/qualification.css";
 import "./assets/css/share_project.css";
 import "./assets/css/home_text_animation.css";
 import "./assets/css/fotter.css";
+import "./assets/css/owl.carousel.min.css";
 // ...................................................<i class="fas fa-briefcase"></i>
 import "./assets/js/jquery-3.7.1.slim.min.js";
 import "./assets/js/owl.carousel.min.js";
