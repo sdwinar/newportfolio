@@ -1101,35 +1101,7 @@ export default {
         <h2 v-motion-pop class="section__title" :class="isDark ? 'color_dark' : 'color_night'"> Contributie Projects</h2>
         <span class="section__subtitle" style="    margin-bottom: 2.1rem !important;">Some of my projects</span>
 
-        
-<!-- <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'> -->
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <div id="news-slider" class="owl-carousel">
-                <div class="post-slide">
-                    <div class="post-img">
-                        <img src="./assets/img/projects/50.png" alt="">
-                        
-                    </div>
-                    <div class="post-content">
-                        <h3 class="post-title">
-                            <a href="#" class="preventDefault">Lorem ipsum dolor sit amet.</a>
-                        </h3>
-                        <p class="post-description">  
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......</p>
-                        
-                        
-                    </div>
-             
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-</div>
+  
         </section>
         <!-- ****************************************fpotter******************************************************************************* -->
         <!-- ****************************************fpotter******************************************************************************* -->

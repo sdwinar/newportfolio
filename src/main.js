@@ -19,7 +19,7 @@ import "./assets/css/fotter.css";
 import "./assets/css/owl.carousel.min.css";
 // ...................................................<i class="fas fa-briefcase"></i>
 import "./assets/js/jquery-3.7.1.slim.min.js";
-import "./assets/js/owl.carousel.min.js";
+// import "./assets/js/owl.carousel.min.js";
 import "./assets/js/main.js";
 
 
