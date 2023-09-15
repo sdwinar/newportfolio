@@ -17,6 +17,14 @@
   }
 }
 
+.shadow_light{
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15)
+}
+
+.shadow_dark{
+  box-shadow: 0 0.5rem 1rem rgb(255 192 192 / 10%)
+}
+
 .show_top_button{
   display: block;    position: fixed;    bottom: 5rem;    left: 1.5rem;    font-size: 2rem;
 }

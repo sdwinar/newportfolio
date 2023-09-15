@@ -13,6 +13,7 @@ const skills = ref(null)
 const services = ref(null)
 const Qualification = ref(null)
 const projects = ref(null)
+const share_projects = ref(null)
 
 function scrollToAbout() {
     About.value.scrollIntoView({ behavior: 'smooth' })
@@ -28,8 +29,10 @@ function scrollToServices() {
 }
 function scrollToQualification() {
     Qualification.value.scrollIntoView({ behavior: 'smooth' })
-}function scrollToProjects() {
+} function scrollToProjects() {
     projects.value.scrollIntoView({ behavior: 'smooth' })
+} function scrollToShareProjects() {
+    share_projects.value.scrollIntoView({ behavior: 'smooth' })
 }
 function scrollToTop() {
     window.scrollTo(0, 0);
@@ -44,8 +47,8 @@ onMounted(() => {
     handleScroll()
 
 
-    // home_link.classList.add("router-link-active");
-    // document.home_link.classList.add("router-link-active");
+    // home_link.classList.add("nav_btn");
+    // document.home_link.classList.add("nav_btn");
     // hhh.classList.remove("button-active");
 
 
@@ -95,52 +98,52 @@ export default {
             const portfolio_link = this.$refs.portfolio_link;
 
             if (prev >= 0 && prev < 700) {
-                home_link.classList.add("router-link-active");
-                about_link.classList.remove("router-link-active");
-                skills_link.classList.remove("router-link-active");
-                services_link.classList.remove("router-link-active");
-                qualification_link.classList.remove("router-link-active");
-                portfolio_link.classList.remove("router-link-active");
+                home_link.classList.add("nav_btn");
+                about_link.classList.remove("nav_btn");
+                skills_link.classList.remove("nav_btn");
+                services_link.classList.remove("nav_btn");
+                qualification_link.classList.remove("nav_btn");
+                portfolio_link.classList.remove("nav_btn");
 
 
             } else if (prev >= 700 && prev < 1250) {
-                home_link.classList.remove("router-link-active");
-                about_link.classList.add("router-link-active");
-                skills_link.classList.remove("router-link-active");
-                services_link.classList.remove("router-link-active");
-                qualification_link.classList.remove("router-link-active");
-                portfolio_link.classList.remove("router-link-active");
+                home_link.classList.remove("nav_btn");
+                about_link.classList.add("nav_btn");
+                skills_link.classList.remove("nav_btn");
+                services_link.classList.remove("nav_btn");
+                qualification_link.classList.remove("nav_btn");
+                portfolio_link.classList.remove("nav_btn");
 
             } else if (prev >= 1250 && prev < 2140) {
-                home_link.classList.remove("router-link-active");
-                about_link.classList.remove("router-link-active");
-                qualification_link.classList.add("router-link-active");
-                services_link.classList.remove("router-link-active");
-                skills_link.classList.remove("router-link-active");
-                portfolio_link.classList.remove("router-link-active");
+                home_link.classList.remove("nav_btn");
+                about_link.classList.remove("nav_btn");
+                qualification_link.classList.add("nav_btn");
+                services_link.classList.remove("nav_btn");
+                skills_link.classList.remove("nav_btn");
+                portfolio_link.classList.remove("nav_btn");
 
             } else if (prev >= 2140 && prev < 2820) {
-                home_link.classList.remove("router-link-active");
-                about_link.classList.remove("router-link-active");
-                skills_link.classList.add("router-link-active");
-                services_link.classList.remove("router-link-active");
-                qualification_link.classList.remove("router-link-active");
-                portfolio_link.classList.remove("router-link-active");
+                home_link.classList.remove("nav_btn");
+                about_link.classList.remove("nav_btn");
+                skills_link.classList.add("nav_btn");
+                services_link.classList.remove("nav_btn");
+                qualification_link.classList.remove("nav_btn");
+                portfolio_link.classList.remove("nav_btn");
 
             } else if (prev >= 2820 && prev < 3580) {
-                home_link.classList.remove("router-link-active");
-                about_link.classList.remove("router-link-active");
-                skills_link.classList.remove("router-link-active");
-                services_link.classList.add("router-link-active");
-                qualification_link.classList.remove("router-link-active");
-                portfolio_link.classList.remove("router-link-active");
-            }else if (prev >= 3580 && prev < 10000) {
-                home_link.classList.remove("router-link-active");
-                about_link.classList.remove("router-link-active");
-                skills_link.classList.remove("router-link-active");
-                services_link.classList.remove("router-link-active");
-                qualification_link.classList.remove("router-link-active");
-                portfolio_link.classList.add("router-link-active");
+                home_link.classList.remove("nav_btn");
+                about_link.classList.remove("nav_btn");
+                skills_link.classList.remove("nav_btn");
+                services_link.classList.add("nav_btn");
+                qualification_link.classList.remove("nav_btn");
+                portfolio_link.classList.remove("nav_btn");
+            } else if (prev >= 3580 && prev < 10000) {
+                home_link.classList.remove("nav_btn");
+                about_link.classList.remove("nav_btn");
+                skills_link.classList.remove("nav_btn");
+                services_link.classList.remove("nav_btn");
+                qualification_link.classList.remove("nav_btn");
+                portfolio_link.classList.add("nav_btn");
             }
 
 
@@ -252,20 +255,29 @@ export default {
 
                 <div :class="isDark ? 'color_dark ' : 'color_light '" lc-helper="shortcode" class="live-shortcode ms-auto">
                     <!--  lc_nav_menu -->
-                    <ul  id="menu-secondary" class="navbar-nav me-auto mb-2 mb-md-0 navbar-nav">
+                    <ul id="menu-secondary" class="navbar-nav me-auto mb-2 mb-md-0 navbar-nav">
                         <li
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item nav-item-33131">
-                            <a ref="portfolio_link" :class="isDark ? 'color_dark ' : 'color_light '" href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"
-                                data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
+                            <a ref="portfolio_link" :class="isDark ? 'color_dark ' : 'color_light '" href="#"
+                                class="nav-link  dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                                aria-haspopup="true" aria-expanded="false">
                                 &nbsp; <font-awesome-icon icon="fa-solid fa-briefcase" />&nbsp;{{ $t('nav.portfolio') }}</a>
-                            <ul  :class="isDark ? 'dropdown_dark' : 'dropdown_light'" class="dropdown-menu  depth_0">
+                            <ul :class="isDark ? 'dropdown_dark' : 'dropdown_light'" class="dropdown-menu  depth_0"
+                                style="    width: 14rem !important;">
                                 <li>
-                            <button ref="projects_link" :class="isDark ? 'color_dark ' : 'color_light '"
-                             @click="scrollToProjects" class="nav-link">
-                                &nbsp; <font-awesome-icon icon="fa-solid fa-code" />&nbsp; {{ $t('nav.projects') }}
-                            </button>
-                        </li>
-                     
+                                    <button ref="projects_link" :class="isDark ? 'color_dark ' : 'color_light '"
+                                        @click="scrollToProjects" class="nav-link">
+                                        &nbsp; <font-awesome-icon icon="fa-solid fa-code" />&nbsp; {{ $t('nav.projects') }}
+                                    </button>
+                                </li>
+                                <li>
+                                    <button ref="share_projects_link" :class="isDark ? 'color_dark ' : 'color_light '"
+                                        @click="scrollToShareProjects" class="nav-link">
+                                        &nbsp; <font-awesome-icon icon="fa-solid fa-share" />&nbsp; {{
+                                            $t('nav.share_projects') }}
+                                    </button>
+                                </li>
+
                             </ul>
                         </li>
                     </ul> <!-- /lc_nav_menu -->
@@ -330,7 +342,7 @@ export default {
         </ul> -->
         <div class="container" style="padding-top: 10vh;padding-bottom:10vh">
             <div class="row align-items-center px-2">
-                <div class="col-12 col-md-7 col-lg-6">
+                <div class="col-6 col-md-7 col-lg-6">
                     <div class="lc-block mb-4">
                         <div editable="rich">
                             <section>
@@ -390,25 +402,25 @@ export default {
                         <div v-motion-roll-bottom class="ps-3">
                             <h3 class="h2 mb-0 text-secondary" editable="inline">
                                 <a href="https://wa.me/+249117485242" target="_blank">
-                                <font-awesome-icon style="margin-left:20px" icon="fa-brands fa-whatsapp" />
-                            </a>
+                                    <font-awesome-icon style="margin-left:20px" icon="fa-brands fa-whatsapp" />
+                                </a>
                             </h3>
                         </div>
 
-    
+
                         <!-- <div class="border-start"></div> -->
-      
+
                         <div v-motion-roll-bottom class="ps-3">
                             <h3 class="h2 mb-0 text-secondary" editable="inline">
                                 <a href="https://wa.me/+249117485242" target="_blank">
-                                <font-awesome-icon style="margin-left:20px;" icon="fa- fa-envelope" />
+                                    <font-awesome-icon style="margin-left:20px;" icon="fa- fa-envelope" />
                                 </a>
                             </h3>
                         </div>
                         <div v-motion-roll-bottom class="px-3">
                             <h3 class="h2 mb-0 text-secondary" editable="inline">
                                 <a href="https://wa.me/+249117485242" target="_blank">
-                                <font-awesome-icon style="margin-left:20px;" icon="fa-brands fa-linkedin" />
+                                    <font-awesome-icon style="margin-left:20px;" icon="fa-brands fa-linkedin" />
                                 </a>
                             </h3>
                         </div>
@@ -416,7 +428,7 @@ export default {
                 </div><!-- /col -->
                 <div v-motion :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0, scale: 1 }"
                     :variants="{ custom: { scale: 2 } }" :hovered="{ scale: 1.2 }" :delay="200"
-                    class="col-12 col-md-5 col-lg-6 img_home_dev">
+                    class="col-6 col-md-5 col-lg-6 img_home_dev">
                     <div class="lc-block"><img alt="" :class="$t('home.home_image_transform_scaleX')"
                             class="img-fluid mx-auto d-block" src="./assets/img/home.png">
                     </div><!-- /lc-block -->
@@ -617,7 +629,7 @@ export default {
                         </div>
 
                     </div>
-               
+
 
                 </div>
 
@@ -802,7 +814,7 @@ export default {
 
             <div class="row mt-4">
                 <div class="col-md-4">
-                    <div class="p-lg-5 p-4 shadow">
+                    <div class="p-lg-5 p-4 " :class="isDark ? 'shadow_dark' : 'shadow_light'">
                         <div class="lc-block mb-4 "><img alt="" class="img-fluid services_img"
                                 src="./assets/img/services1.png">
 
@@ -836,7 +848,7 @@ export default {
                     </div>
                 </div><!-- /col -->
                 <div class="col-md-4">
-                    <div class="p-lg-5 p-4 shadow">
+                    <div class="p-lg-5 p-4 " :class="isDark ? 'shadow_dark' : 'shadow_light'">
                         <div class="lc-block mb-4 "><img alt="" class="img-fluid services_img"
                                 src="./assets/img/services1.png">
 
@@ -869,7 +881,7 @@ export default {
                     </div>
                 </div><!-- /col -->
                 <div class="col-md-4">
-                    <div class="p-lg-5 p-4 shadow">
+                    <div class="p-lg-5 p-4 " :class="isDark ? 'shadow_dark' : 'shadow_light'">
                         <div class="lc-block mb-4 "><img alt="" class="img-fluid services_img"
                                 src="./assets/img/services1.png">
 
@@ -886,29 +898,29 @@ export default {
                             </p>
                             <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
                                 Mobile app to view the website
-                        </p>
-                        <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
-                            Teaching programming
-                        </p>
-                        <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
-                            Design and edit photos and videos
-                        </p>
+                            </p>
+                            <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                                Teaching programming
+                            </p>
+                            <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                                Design and edit photos and videos
+                            </p>
 
-                        <!-- <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
+                            <!-- <p editable="inline"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;
                                 Hosting the system on Internet servers
                             </p> -->
 
 
-                        <!-- <a class="btn btn-outline-primary" href="#" role="button">Read more</a> -->
-                    </div><!-- /lc-block -->
-                </div>
-            </div><!-- /col -->
+                            <!-- <a class="btn btn-outline-primary" href="#" role="button">Read more</a> -->
+                        </div><!-- /lc-block -->
+                    </div>
+                </div><!-- /col -->
 
+
+            </div>
 
         </div>
-
-    </div>
-</section>
+    </section>
 
     <!-- *******************************************************end_services******************************************************************************* -->
     <!-- *******************************************************start_project******************************************************************************* -->
@@ -922,268 +934,282 @@ export default {
         <h2 v-motion-pop class="section__title" :class="isDark ? 'color_dark' : 'color_night'">Projects</h2>
         <span class="section__subtitle" style="    margin-bottom: 2.1rem !important;">Some of my projects</span>
 
-         
-  
-    <div class="container py-5">
-   <div class="row mb-lg-4">
-      <div class="col-12 col-lg-4 mb-4 mb-lg-0">
-         <div class="lc-block mb-3">
-            <img class="img-fluid" src="./assets/img/projects/01.png" style="    height: 37vh;"
-             alt="Photo by Laika Notebooks" loading="lazy">
-         </div>
-         <!-- /lc-block -->
-         <div class="lc-block text-center mb-3">
-            <div editable="rich">
-               <h3 class="fw-light">SUSS</h3>
-            </div>
-         </div>
-         <!-- /lc-block -->
-         <div class="lc-block text-center mb-4">
-            <div editable="rich">
-               <p> A communication and service community for university students.</p>
-            </div>
-         </div>
-         <!-- /lc-block -->
-         <div class="lc-block text-center">
-            <a class="btn btn-link" href="https://mostaql.com/portfolio/942991"  target="_blank" role="button">Learn more</a>
-         </div>
-         <!-- /lc-block -->
-      </div>
-      <!-- /col -->
-      <div class="col-12 col-lg-4 mb-4 mb-lg-0">
-         <div class="lc-block mb-3">
-            <img class="img-fluid" src="./assets/img/projects/02.png" style="    height: 37vh;"
-             alt="Photo by Laika Notebooks" loading="lazy">
-         </div>
-         <!-- /lc-block -->
-         <div class="lc-block text-center mb-3">
-            <div editable="rich">
-               <h3 class="fw-light">SMS system V1.0</h3>
-            </div>
-         </div>
-         <!-- /lc-block -->
-         <div class="lc-block text-center mb-4">
-            <div editable="rich">
-               <p>Sales and store management system software</p>
-            </div>
-         </div>
-         <!-- /lc-block -->
-         <div class="lc-block text-center">
-            <a class="btn btn-link" href="https://mostaql.com/portfolio/942999"  target="_blank" role="button">Learn more</a>
-         </div>
-         <!-- /lc-block -->
-      </div>
-      <!-- /col -->
-      <div class="col-12 col-lg-4 mb-4 mb-lg-0">
-         <div class="lc-block mb-3">
-            <img class="img-fluid" src="./assets/img/projects/03.png" style="    height: 37vh;"
-             alt="Photo by Laika Notebooks" loading="lazy">
-         </div>
-         <!-- /lc-block -->
-         <div class="lc-block text-center mb-3">
-            <div editable="rich">
-               <h3 class="fw-light">SMS system V2.0</h3>
-            </div>
-         </div>
-         <!-- /lc-block -->
-         <div class="lc-block text-center mb-4">
-            <div editable="rich">
-               <p>Sales and store management system software</p>
-            </div>
-         </div>
-         <!-- /lc-block -->
-         <div class="lc-block text-center">
-            <a class="btn btn-link" href="https://mostaql.com/portfolio/943002"  target="_blank" role="button">Learn more</a>
-         </div>
-         <!-- /lc-block -->
-      </div>
-      <!-- /col -->
-     
-  
-   
-   </div>
-   <br/>
-   <hr/>
-   <br/>
-   <!-- **************************************************************************.......................................... -->
-   <div class="row mb-lg-4">
-      <div class="col-12 col-lg-4 mb-4 mb-lg-0">
-         <div class="lc-block mb-3">
-            
-            <img class="img-fluid" src="./assets/img/projects/04.png" style="    height: 37vh;"
-             alt="Photo by Laika Notebooks" loading="lazy">
-         </div>
-         <!-- /lc-block -->
-         <div class="lc-block text-center mb-3">
-            <div editable="rich">
-               <h3 class="fw-light">SUSS</h3>
-            </div>
-         </div>
-         <!-- /lc-block -->
-         <div class="lc-block text-center mb-4">
-            <div editable="rich">
-               <p> A communication and service community for university students.</p>
-            </div>
-         </div>
-         <!-- /lc-block -->
-         <div class="lc-block text-center">
-            <a class="btn btn-link" href="https://www.facebook.com/mhmd194/posts/3355814557971831?ref=embed_post"  target="_blank" role="button">Learn more</a>
-         </div>
-         <!-- /lc-block -->
-      </div>
-      <!-- /col -->
-      <div class="col-12 col-lg-4 mb-4 mb-lg-0">
-         <div class="lc-block mb-3">
-            <img class="img-fluid" src="./assets/img/projects/05.png" style="    height: 37vh;"
-             alt="Photo by Laika Notebooks" loading="lazy">
-         </div>
-         <!-- /lc-block -->
-         <div class="lc-block text-center mb-3">
-            <div editable="rich">
-               <h3 class="fw-light">SMS system V1.0</h3>
-            </div>
-         </div>
-         <!-- /lc-block -->
-         <div class="lc-block text-center mb-4">
-            <div editable="rich">
-               <p>Sales and store management system software</p>
-            </div>
-         </div>
-         <!-- /lc-block -->
-         <div class="lc-block text-center">
-            <a class="btn btn-link" href="https://mostaql.com/portfolio/942999"  target="_blank" role="button">Learn more</a>
-         </div>
-         <!-- /lc-block -->
-      </div>
-      <!-- /col -->
-      <div class="col-12 col-lg-4 mb-4 mb-lg-0">
-         <div class="lc-block mb-3">
-            <img class="img-fluid" src="./assets/img/projects/03.png" style="    height: 37vh;"
-             alt="Photo by Laika Notebooks" loading="lazy">
-         </div>
-         <!-- /lc-block -->
-         <div class="lc-block text-center mb-3">
-            <div editable="rich">
-               <h3 class="fw-light">SMS system V2.0</h3>
-            </div>
-         </div>
-         <!-- /lc-block -->
-         <div class="lc-block text-center mb-4">
-            <div editable="rich">
-               <p>Sales and store management system software</p>
-            </div>
-         </div>
-         <!-- /lc-block -->
-         <div class="lc-block text-center">
-            <a class="btn btn-link" href="https://mostaql.com/portfolio/943002"  target="_blank" role="button">Learn more</a>
-         </div>
-         <!-- /lc-block -->
-      </div>
-      <!-- /col -->
-     
-  
-   
-   </div>
 
-</div> 
- 
-  
 
-        
-        </section>
-        <!-- ***********************************************************shar project***************************************** -->
-        <!-- ***********************************************************shar project***************************************** -->
-        <!-- ***********************************************************shar project***************************************** -->
-        <section class="skills section" :class="isDark ? 'color_dark area_dark' : 'color_night area_light'"
-        style="   padding: 6rem;">
+        <div class="container py-5">
+            <div class="row mb-lg-4">
+                <div class="col-6 col-lg-4 mb-4 mb-lg-0" :class="isDark ? 'shadow_dark' : 'shadow_light'">
+                    <div class="lc-block mb-3">
+                        <img class="img-fluid" src="./assets/img/projects/01.png" style="    height: 37vh;"
+                            alt="Photo by Laika Notebooks" loading="lazy">
+                    </div>
+                    <!-- /lc-block -->
+                    <div class="lc-block text-center mb-3">
+                        <div editable="rich">
+                            <h3 class="fw-light">SUSS</h3>
+                        </div>
+                    </div>
+                    <!-- /lc-block -->
+                    <div class="lc-block text-center mb-4">
+                        <div editable="rich">
+                            <p> A communication and service community for university students.</p>
+                        </div>
+                    </div>
+                    <!-- /lc-block -->
+                    <div class="lc-block text-center">
+                        <a class="btn btn-link" href="https://mostaql.com/portfolio/942991" target="_blank"
+                            role="button">Learn more</a>
+                    </div>
+                    <!-- /lc-block -->
+                </div>
+                <!-- /col -->
+                <div class="col-6 col-lg-4 mb-4 mb-lg-0" :class="isDark ? 'shadow_dark' : 'shadow_light'">
+                    <div class="lc-block mb-3">
+                        <img class="img-fluid" src="./assets/img/projects/02.png" style="    height: 37vh;"
+                            alt="Photo by Laika Notebooks" loading="lazy">
+                    </div>
+                    <!-- /lc-block -->
+                    <div class="lc-block text-center mb-3">
+                        <div editable="rich">
+                            <h3 class="fw-light">SMS system V1.0</h3>
+                        </div>
+                    </div>
+                    <!-- /lc-block -->
+                    <div class="lc-block text-center mb-4">
+                        <div editable="rich">
+                            <p>Sales and store management system software</p>
+                        </div>
+                    </div>
+                    <!-- /lc-block -->
+                    <div class="lc-block text-center">
+                        <a class="btn btn-link" href="https://mostaql.com/portfolio/942999" target="_blank"
+                            role="button">Learn more</a>
+                    </div>
+                    <!-- /lc-block -->
+                </div>
+                <!-- /col -->
+                <div class="col-6 col-lg-4 mb-4 mb-lg-0" :class="isDark ? 'shadow_dark' : 'shadow_light'">
+                    <div class="lc-block mb-3">
+                        <img class="img-fluid" src="./assets/img/projects/03.png" style="    height: 37vh;"
+                            alt="Photo by Laika Notebooks" loading="lazy">
+                    </div>
+                    <!-- /lc-block -->
+                    <div class="lc-block text-center mb-3">
+                        <div editable="rich">
+                            <h3 class="fw-light">SMS system V2.0</h3>
+                        </div>
+                    </div>
+                    <!-- /lc-block -->
+                    <div class="lc-block text-center mb-4">
+                        <div editable="rich">
+                            <p>Sales and store management system software</p>
+                        </div>
+                    </div>
+                    <!-- /lc-block -->
+                    <div class="lc-block text-center">
+                        <a class="btn btn-link" href="https://mostaql.com/portfolio/943002" target="_blank"
+                            role="button">Learn more</a>
+                    </div>
+                    <!-- /lc-block -->
+                </div>
+                <!-- /col -->
 
-        
-        <h2 v-motion-pop class="section__title" :class="isDark ? 'color_dark' : 'color_night'"> Contributie Projects</h2>
+
+
+            </div>
+            <br />
+            <hr />
+            <br />
+            <!-- **************************************************************************.......................................... -->
+            <div class="row mb-lg-4">
+                <div class="col-6 col-lg-4 mb-4 mb-lg-0" :class="isDark ? 'shadow_dark' : 'shadow_light'">
+                    <div class="lc-block mb-3">
+
+                        <img class="img-fluid" src="./assets/img/projects/04.png" style="    height: 37vh;"
+                            alt="Photo by Laika Notebooks" loading="lazy">
+                    </div>
+                    <!-- /lc-block -->
+                    <div class="lc-block text-center mb-3">
+                        <div editable="rich">
+                            <h3 class="fw-light">SUSS</h3>
+                        </div>
+                    </div>
+                    <!-- /lc-block -->
+                    <div class="lc-block text-center mb-4">
+                        <div editable="rich">
+                            <p> A communication and service community for university students.</p>
+                        </div>
+                    </div>
+                    <!-- /lc-block -->
+                    <div class="lc-block text-center">
+                        <a class="btn btn-link"
+                            href="https://www.facebook.com/mhmd194/posts/3355814557971831?ref=embed_post" target="_blank"
+                            role="button">Learn more</a>
+                    </div>
+                    <!-- /lc-block -->
+                </div>
+                <!-- /col -->
+                <div class="col-6 col-lg-4 mb-4 mb-lg-0" :class="isDark ? 'shadow_dark' : 'shadow_light'">
+                    <div class="lc-block mb-3">
+                        <img class="img-fluid" src="./assets/img/projects/05.png" style="    height: 37vh;"
+                            alt="Photo by Laika Notebooks" loading="lazy">
+                    </div>
+                    <!-- /lc-block -->
+                    <div class="lc-block text-center mb-3">
+                        <div editable="rich">
+                            <h3 class="fw-light">SMS system V1.0</h3>
+                        </div>
+                    </div>
+                    <!-- /lc-block -->
+                    <div class="lc-block text-center mb-4">
+                        <div editable="rich">
+                            <p>Sales and store management system software</p>
+                        </div>
+                    </div>
+                    <!-- /lc-block -->
+                    <div class="lc-block text-center">
+                        <a class="btn btn-link" href="https://mostaql.com/portfolio/942999" target="_blank"
+                            role="button">Learn more</a>
+                    </div>
+                    <!-- /lc-block -->
+                </div>
+                <!-- /col -->
+                <div class="col-6 col-lg-4 mb-4 mb-lg-0" :class="isDark ? 'shadow_dark' : 'shadow_light'">
+                    <div class="lc-block mb-3">
+                        <img class="img-fluid" src="./assets/img/projects/03.png" style="    height: 37vh;"
+                            alt="Photo by Laika Notebooks" loading="lazy">
+                    </div>
+                    <!-- /lc-block -->
+                    <div class="lc-block text-center mb-3">
+                        <div editable="rich">
+                            <h3 class="fw-light">SMS system V2.0</h3>
+                        </div>
+                    </div>
+                    <!-- /lc-block -->
+                    <div class="lc-block text-center mb-4">
+                        <div editable="rich">
+                            <p>Sales and store management system software</p>
+                        </div>
+                    </div>
+                    <!-- /lc-block -->
+                    <div class="lc-block text-center">
+                        <a class="btn btn-link" href="https://mostaql.com/portfolio/943002" target="_blank"
+                            role="button">Learn more</a>
+                    </div>
+                    <!-- /lc-block -->
+                </div>
+                <!-- /col -->
+
+
+
+            </div>
+
+        </div>
+
+
+
+
+    </section>
+    <!-- ***********************************************************shar project***************************************** -->
+    <!-- ***********************************************************shar project***************************************** -->
+    <!-- ***********************************************************shar project***************************************** -->
+    <some-component ref="share_projects"></some-component>
+
+    <section class="skills section" :class="isDark ? 'color_dark area_dark' : 'color_night area_light'"
+        style="   padding: 6rem; ">
+
+        <h2 style="margin-top: 1.5rem;" v-motion-pop class="section__title" :class="isDark ? 'color_dark' : 'color_night'">
+            Contributie Projects</h2>
         <span class="section__subtitle" style="    margin-bottom: 2.1rem !important;">Some of my projects</span>
+        <!-- ****************************************************************************************************************** -->
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="padding: 0% 16% 3% 16%;">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="./assets/img/projects/50.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
 
-  
-        </section>
-        <!-- ****************************************fpotter******************************************************************************* -->
-        <!-- ****************************************fpotter******************************************************************************* -->
-        <!-- ****************************************fpotter******************************************************************************* -->
-<div  :class="isDark ? 'area_dark' : 'area_light'" class="footer">
-	<div class="container">		
-		<div class="row text-center">						
-			<div class="col-lg-12 col-sm-12 col-xs-12">
-				<div class="footer_menu">
-					<ul>
-                        <li>
-                            <button ref="home_link" @click="scrollToHome" class="nav-link"
-                                :class="isDark ? 'btn_dark' : 'btn_light'">
-                                &nbsp;  {{ $t('nav.home') }}
-                            </button>
-                        </li>
-                        <li>
-                            <button ref="about_link" @click="scrollToAbout" class="nav-link"
-                                :class="isDark ? 'btn_dark' : 'btn_light'">
-                                &nbsp;  {{ $t('nav.about') }}
-                            </button>
-                        </li>
-                        <li>
-                            <button ref="qualification_link" @click="scrollToQualification" class="nav-link"
-                                :class="isDark ? 'btn_dark' : 'btn_light'">
-                                &nbsp;  {{ $t('nav.qualification') }}
-                            </button>
-                        </li>
-                        <li>
-                            <button ref="skills_link" @click="scrollToSkills" class="nav-link"
-                                :class="isDark ? 'btn_dark' : 'btn_light'">
-                                &nbsp;  {{ $t('nav.skills') }}
-                            </button>
-                        </li>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="./assets/img/projects/51.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/img/projects/52.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!-- ****************************************************************************************************************************************** -->
 
-                        <li>
-                            <button ref="services_link" @click="scrollToServices" class="nav-link"
-                                :class="isDark ? 'btn_dark' : 'btn_light'">
-                                &nbsp; {{ $t('nav.services') }}
-                            </button>
-                        </li>
-					</ul>
-				</div>						
-				<div class="footer_copyright">
-					<p :class="isDark ? 'color_dark' : 'color_light'">© 2021 Sai. All Rights Reserved.</p>
-				</div>	
-				<div class="footer_profile">
-					<ul>
-                        <LI v-motion-roll-bottom class="ps-3">
-                            <h3 class="h2 mb-0 text-secondary" editable="inline">
-                                <a href="https://wa.me/+249117485242" target="_blank">
-                                <font-awesome-icon style="margin-left:20px" icon="fa-brands fa-whatsapp" />
-                            </a>
-                            </h3>
-                        </LI>
+    </section>
+    <!-- ****************************************fpotter******************************************************************************* -->
+    <!-- ****************************************fpotter******************************************************************************* -->
+    <!-- ****************************************fpotter******************************************************************************* -->
+    <div :class="isDark ? 'area_dark' : 'area_light'" class="footer">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-12 col-sm-12 col-xs-12">
+                    <div class="footer_menu">
 
-    
-                        <!-- <LI class="border-start"></LI> -->
-      
-                        <LI v-motion-roll-bottom class="ps-3">
-                            <h3 class="h2 mb-0 text-secondary" editable="inline">
-                                <a href="https://wa.me/+249117485242" target="_blank">
-                                <font-awesome-icon style="margin-left:20px;" icon="fa- fa-envelope" />
-                                </a>
-                            </h3>
-                        </LI>
-                        <LI v-motion-roll-bottom class="px-3">
-                            <h3 class="h2 mb-0 text-secondary" editable="inline">
-                                <a href="https://wa.me/+249117485242" target="_blank">
-                                <font-awesome-icon style="margin-left:20px;" icon="fa-brands fa-linkedin" />
-                                </a>
-                            </h3>
-                        </LI>
-					</ul>
-				</div>						
-			</div><!--- END COL -->							
-		</div><!--- END ROW -->					
-	</div><!--- END CONTAINER -->
+                    </div>
+                    <div class="footer_copyright">
+                        <p :class="isDark ? 'color_dark' : 'color_light'">© 2021 Sai. All Rights Reserved.</p>
+                    </div>
+                    <div class="footer_profile">
+                        <ul>
+                            <LI v-motion-roll-bottom class="ps-3">
+                                <h3 class="h2 mb-0 text-secondary" editable="inline">
+                                    <a href="https://wa.me/+249117485242" target="_blank">
+                                        <font-awesome-icon style="margin-left:20px" icon="fa-brands fa-whatsapp" />
+                                    </a>
+                                </h3>
+                            </LI>
+
+
+                            <!-- <LI class="border-start"></LI> -->
+
+                            <LI v-motion-roll-bottom class="ps-3">
+                                <h3 class="h2 mb-0 text-secondary" editable="inline">
+                                    <a href="https://wa.me/+249117485242" target="_blank">
+                                        <font-awesome-icon style="margin-left:20px;" icon="fa- fa-envelope" />
+                                    </a>
+                                </h3>
+                            </LI>
+                            <LI v-motion-roll-bottom class="px-3">
+                                <h3 class="h2 mb-0 text-secondary" editable="inline">
+                                    <a href="https://wa.me/+249117485242" target="_blank">
+                                        <font-awesome-icon style="margin-left:20px;" icon="fa-brands fa-linkedin" />
+                                    </a>
+                                </h3>
+                            </LI>
+                        </ul>
+                    </div>
+            </div><!--- END COL -->
+        </div><!--- END ROW -->
+    </div><!--- END CONTAINER -->
 </div>
 
 
 
-<button @click="scrollToTop" ref="topButton" class="hide_top_button"  :class="isDark ? 'color_dark' : 'color_light'"> &nbsp; <font-awesome-icon
-        icon="fa-solid fa-arrow-alt-circle-up" />&nbsp;
+<button @click="scrollToTop" ref="topButton" class="hide_top_button" :class="isDark ? 'color_dark' : 'color_light'">
+    &nbsp; <font-awesome-icon icon="fa-solid fa-arrow-alt-circle-up" />&nbsp;
 </button></template>

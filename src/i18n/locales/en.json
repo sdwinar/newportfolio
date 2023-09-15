@@ -17,7 +17,8 @@
     "services": "Services",
     "portfolio": "Portfolio",
     "qualification": "Qualification",
-    "projects": "Projects"
+    "projects": "Projects",
+    "share_projects": "Contributie Projects"
   },
   "home": {
     "section_style":"home_section_en",

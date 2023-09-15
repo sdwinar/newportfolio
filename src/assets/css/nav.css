@@ -16,11 +16,11 @@ button.btn_light {
     color: rgb(0, 0, 0) !important;
     background-color: white !important;
 }
-button.nav-link.btn_light.router-link-active{
+button.nav-link.nav_btn.btn_light{
     color: #ff9393 !important;
     font-weight: bold !important;
 }
-button.nav-link.btn_dark.router-link-active{
+button.nav-link.nav_btn.btn_dark{
  color: #03a9f4  !important;
     font-weight: bold !important;
 }
