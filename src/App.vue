@@ -1172,7 +1172,7 @@ export default {
 
                     </div>
                     <div class="footer_copyright">
-                        <p :class="isDark ? 'color_dark' : 'color_light'">© 2021 Sai. All Rights Reserved.</p>
+                        <p :class="isDark ? 'color_dark' : 'color_light'">© 2023 Mohammed Alamin. All Rights Reserved.</p>
                     </div>
                     <div class="footer_profile">
                         <ul>
