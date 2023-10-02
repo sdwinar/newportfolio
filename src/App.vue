@@ -202,7 +202,8 @@ export default {
             <!-- end -->
 
             <!-- Desktop Logo -->
-            <div class="lc-block position-absolute start-50 translate-middle top-50 d-none d-lg-block">
+            <div class="lc-block position-absolute start-50 translate-middle top-50 d-none d-lg-block"
+            style="    margin: 0px 41px;">
                 <a editable="inline" class="navbar-brand mx-auto" href="#">
                     <img src="./assets/img/logo.png" width="100" height="100" class="d-block mx-auto" alt="My Website"
                         :style="isDark ? '' : 'filter: invert(1)'">
@@ -963,6 +964,10 @@ export default {
                     <div class="lc-block text-center">
                         <a class="btn btn-link" href="https://mostaql.com/portfolio/942991" target="_blank"
                             role="button">Learn more</a>
+                    </div>
+                    <div class="lc-block text-center">
+                        <a class="btn btn-link" href="https://github.com/sdwinar/suss" target="_blank"
+                            role="button">github</a>
                     </div>
                     <!-- /lc-block -->
                 </div>
