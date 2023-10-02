@@ -489,7 +489,8 @@ export default {
                     </div>
                 </div>
                 <div class="about_buttons">
-                    <a href="./assets/Mohammed_Alamin_cv.pdf" :class="isDark ? 'btn btn-info' : 'btn btn-dark'"
+                    <a href="https://drive.google.com/file/d/1z5orwVC42OtFjRuSzAfpCFdZsQ6NyPdc/view?usp=sharing" 
+                    :class="isDark ? 'btn btn-info' : 'btn btn-dark'" target="_blank"
                         style="font-weight: bold;">
                         Download CV &nbsp; <font-awesome-icon icon="fa-solid fa-download" />&nbsp;
                     </a>
