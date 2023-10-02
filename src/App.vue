@@ -169,7 +169,7 @@ export default {
 <style ></style>
 <template>
     <head>
-        <title>{{ $t('site.name') }}</title>
+        <title> m {{ $t('site.name') }}</title>
     </head>
 
 
@@ -1050,7 +1050,7 @@ export default {
                     <!-- /lc-block -->
                     <div class="lc-block text-center mb-3">
                         <div editable="rich">
-                            <h3 class="fw-light">SUSS</h3>
+                            <h3 class="fw-light">football League</h3>
                         </div>
                     </div>
                     <!-- /lc-block -->
@@ -1064,7 +1064,11 @@ export default {
                         <a class="btn btn-link"
                             href="https://www.facebook.com/mhmd194/posts/3355814557971831?ref=embed_post" target="_blank"
                             role="button">Learn more</a>
+                            <a class="btn btn-link"
+                            href="https://github.com/sdwinar/football_League" target="_blank"
+                            role="button">github</a>
                     </div>
+
                     <!-- /lc-block -->
                 </div>
                 <!-- /col -->
@@ -1076,7 +1080,7 @@ export default {
                     <!-- /lc-block -->
                     <div class="lc-block text-center mb-3">
                         <div editable="rich">
-                            <h3 class="fw-light">SMS system V1.0</h3>
+                            <h3 class="fw-light">medical examinations</h3>
                         </div>
                     </div>
                     <!-- /lc-block -->
@@ -1087,36 +1091,13 @@ export default {
                     </div>
                     <!-- /lc-block -->
                     <div class="lc-block text-center">
-                        <a class="btn btn-link" href="https://mostaql.com/portfolio/942999" target="_blank"
-                            role="button">Learn more</a>
+                        <a class="btn btn-link" href="https://github.com/sdwinar/examinations_02" target="_blank"
+                            role="button">github</a>
                     </div>
                     <!-- /lc-block -->
                 </div>
                 <!-- /col -->
-                <div class="col-12 col-lg-4 mb-4 mb-lg-0" :class="isDark ? 'shadow_dark' : 'shadow_light'">
-                    <div class="lc-block mb-3">
-                        <img class="img-fluid" src="./assets/img/projects/03.png" style="    height: 37vh;"
-                            alt="Photo by Laika Notebooks" loading="lazy">
-                    </div>
-                    <!-- /lc-block -->
-                    <div class="lc-block text-center mb-3">
-                        <div editable="rich">
-                            <h3 class="fw-light">SMS system V2.0</h3>
-                        </div>
-                    </div>
-                    <!-- /lc-block -->
-                    <div class="lc-block text-center mb-4">
-                        <div editable="rich">
-                            <p>Sales and store management system software</p>
-                        </div>
-                    </div>
-                    <!-- /lc-block -->
-                    <div class="lc-block text-center">
-                        <a class="btn btn-link" href="https://mostaql.com/portfolio/943002" target="_blank"
-                            role="button">Learn more</a>
-                    </div>
-                    <!-- /lc-block -->
-                </div>
+            
                 <!-- /col -->
 
 
