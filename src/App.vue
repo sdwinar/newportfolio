@@ -489,7 +489,7 @@ export default {
                     </div>
                 </div>
                 <div class="about_buttons">
-                    <a href="assets/Mohammed_Alamin_cv.pdf" :class="isDark ? 'btn btn-info' : 'btn btn-dark'"
+                    <a href="./assets/Mohammed_Alamin_cv.pdf" :class="isDark ? 'btn btn-info' : 'btn btn-dark'"
                         style="font-weight: bold;">
                         Download CV &nbsp; <font-awesome-icon icon="fa-solid fa-download" />&nbsp;
                     </a>
