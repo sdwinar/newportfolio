@@ -994,6 +994,10 @@ export default {
                         <a class="btn btn-link" href="https://mostaql.com/portfolio/942999" target="_blank"
                             role="button">Learn more</a>
                     </div>
+                    <div class="lc-block text-center">
+                        <a class="btn btn-link" href="https://github.com/sdwinar/bayanSoft" target="_blank"
+                            role="button">github</a>
+                    </div>
                     <!-- /lc-block -->
                 </div>
                 <!-- /col -->
@@ -1018,6 +1022,12 @@ export default {
                     <div class="lc-block text-center">
                         <a class="btn btn-link" href="https://mostaql.com/portfolio/943002" target="_blank"
                             role="button">Learn more</a>
+                    </div>
+                    <div class="lc-block text-center">
+                        <a class="btn btn-link" href="https://github.com/sdwinar/SMSsystemV2.0" target="_blank"
+                            role="button">github</a>
+                            <a class="btn btn-link" href="https://youtu.be/o53dW30QZLE?si=yKYQDsfe0zOxmRbU" target="_blank"
+                            role="button">youtube</a>
                     </div>
                     <!-- /lc-block -->
                 </div>
