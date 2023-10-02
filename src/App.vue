@@ -342,7 +342,7 @@ export default {
         </ul> -->
         <div class="container" style="padding-top: 10vh;padding-bottom:10vh">
             <div class="row align-items-center px-2">
-                <div class="col-6 col-md-7 col-lg-6">
+                <div class="col-12 col-md-7 col-lg-6">
                     <div class="lc-block mb-4">
                         <div editable="rich">
                             <div class="row">
@@ -431,7 +431,7 @@ export default {
                 </div><!-- /col -->
                 <div v-motion :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0, scale: 1 }"
                     :variants="{ custom: { scale: 2 } }" :hovered="{ scale: 1.2 }" :delay="200"
-                    class="col-6 col-md-5 col-lg-6 img_home_dev">
+                    class="col-12 col-md-5 col-lg-6 img_home_dev">
                     <div class="lc-block"><img alt="" :class="$t('home.home_image_transform_scaleX')"
                             class="img-fluid mx-auto d-block" src="./assets/img/home.png">
                     </div><!-- /lc-block -->
@@ -967,7 +967,7 @@ export default {
                     <!-- /lc-block -->
                 </div>
                 <!-- /col -->
-                <div class="col-6 col-lg-4 mb-4 mb-lg-0" :class="isDark ? 'shadow_dark' : 'shadow_light'">
+                <div class="col-12 col-lg-4 mb-4 mb-lg-0" :class="isDark ? 'shadow_dark' : 'shadow_light'">
                     <div class="lc-block mb-3">
                         <img class="img-fluid" src="./assets/img/projects/02.png" style="    height: 37vh;"
                             alt="Photo by Laika Notebooks" loading="lazy">
@@ -992,7 +992,7 @@ export default {
                     <!-- /lc-block -->
                 </div>
                 <!-- /col -->
-                <div class="col-6 col-lg-4 mb-4 mb-lg-0" :class="isDark ? 'shadow_dark' : 'shadow_light'">
+                <div class="col-12 col-lg-4 mb-4 mb-lg-0" :class="isDark ? 'shadow_dark' : 'shadow_light'">
                     <div class="lc-block mb-3">
                         <img class="img-fluid" src="./assets/img/projects/03.png" style="    height: 37vh;"
                             alt="Photo by Laika Notebooks" loading="lazy">
@@ -1026,7 +1026,7 @@ export default {
             <br />
             <!-- **************************************************************************.......................................... -->
             <div class="row mb-lg-4">
-                <div class="col-6 col-lg-4 mb-4 mb-lg-0" :class="isDark ? 'shadow_dark' : 'shadow_light'">
+                <div class="col-12 col-lg-4 mb-4 mb-lg-0" :class="isDark ? 'shadow_dark' : 'shadow_light'">
                     <div class="lc-block mb-3">
 
                         <img class="img-fluid" src="./assets/img/projects/04.png" style="    height: 37vh;"
@@ -1053,7 +1053,7 @@ export default {
                     <!-- /lc-block -->
                 </div>
                 <!-- /col -->
-                <div class="col-6 col-lg-4 mb-4 mb-lg-0" :class="isDark ? 'shadow_dark' : 'shadow_light'">
+                <div class="col-12 col-lg-4 mb-4 mb-lg-0" :class="isDark ? 'shadow_dark' : 'shadow_light'">
                     <div class="lc-block mb-3">
                         <img class="img-fluid" src="./assets/img/projects/05.png" style="    height: 37vh;"
                             alt="Photo by Laika Notebooks" loading="lazy">
@@ -1078,7 +1078,7 @@ export default {
                     <!-- /lc-block -->
                 </div>
                 <!-- /col -->
-                <div class="col-6 col-lg-4 mb-4 mb-lg-0" :class="isDark ? 'shadow_dark' : 'shadow_light'">
+                <div class="col-12 col-lg-4 mb-4 mb-lg-0" :class="isDark ? 'shadow_dark' : 'shadow_light'">
                     <div class="lc-block mb-3">
                         <img class="img-fluid" src="./assets/img/projects/03.png" style="    height: 37vh;"
                             alt="Photo by Laika Notebooks" loading="lazy">
