@@ -240,7 +240,7 @@ export default {
                         <li>
                             <button ref="skills_link" @click="scrollToSkills" class="nav-link"
                                 :class="isDark ? 'btn_dark' : 'btn_light'">
-                                &nbsp; <font-awesome-icon icon="fa-solid fa-bomb" />&nbsp; {{ $t('nav.skills') }}
+                                &nbsp; <font-awesome-icon icon="fa-solid fa-bomb" />&nbsp;  {{ $t('nav.skills') }}
                             </button>
                         </li>
 
@@ -345,14 +345,17 @@ export default {
                 <div class="col-6 col-md-7 col-lg-6">
                     <div class="lc-block mb-4">
                         <div editable="rich">
-                            <section>
-                                <div :class="isDark ? 'content_dark' : 'content_light'">
-                                    <h2 :class="$t('home.welcome_class')">{{
-                                        $t('home.welcame') }}</h2>
-                                    <h2 :class="$t('home.welcome_class')">{{
-                                        $t('home.welcame') }}</h2>
-                                </div>
-                            </section><br />
+                            <div class="row">
+                                <section>
+                                    <div :class="isDark ? 'content_dark' : 'content_light'">
+                                        <h2 :class="$t('home.welcome_class')">{{
+                                            $t('home.welcame') }}</h2>
+                                        <h2 :class="$t('home.welcome_class')">{{
+                                            $t('home.welcame') }}</h2>
+                                    </div>
+                                </section><br />
+                            </div>
+
 
 
                             <h3 v-motion-pop class="home_subtitle">
@@ -939,7 +942,7 @@ export default {
 
         <div class="container py-5">
             <div class="row mb-lg-4">
-                <div class="col-6 col-lg-4 mb-4 mb-lg-0" :class="isDark ? 'shadow_dark' : 'shadow_light'">
+                <div class="col-12 col-lg-4 mb-4 mb-lg-0" :class="isDark ? 'shadow_dark' : 'shadow_light'">
                     <div class="lc-block mb-3">
                         <img class="img-fluid" src="./assets/img/projects/01.png" style="    height: 37vh;"
                             alt="Photo by Laika Notebooks" loading="lazy">
@@ -1204,13 +1207,14 @@ export default {
                             </LI>
                         </ul>
                     </div>
-            </div><!--- END COL -->
-        </div><!--- END ROW -->
-    </div><!--- END CONTAINER -->
-</div>
+                </div><!--- END COL -->
+            </div><!--- END ROW -->
+        </div><!--- END CONTAINER -->
+    </div>
 
 
 
-<button @click="scrollToTop" ref="topButton" class="hide_top_button" :class="isDark ? 'color_dark' : 'color_light'">
-    &nbsp; <font-awesome-icon icon="fa-solid fa-arrow-alt-circle-up" />&nbsp;
-</button></template>
+    <button @click="scrollToTop" ref="topButton" class="hide_top_button" :class="isDark ? 'color_dark' : 'color_light'">
+        &nbsp; <font-awesome-icon icon="fa-solid fa-arrow-alt-circle-up" />&nbsp;
+    </button>
+</template>
