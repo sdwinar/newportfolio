@@ -1,0 +1,62 @@
+{
+  "locale": {
+    "ar": "العربية",
+    "en": "English",
+    "fr": "Franch"
+  },
+  "site": {
+    "name": "مـحمد الامـين",
+    "dir": "rtl",
+    "bootstrap": "bootstrap"
+  },
+  "nav": {
+    "my_name": "محمد الامين ",
+    "home": "الرئيسية",
+    "about": "عني" ,
+     "skills": "المهارات",
+    "services": "الخدمات",
+    "portfolio": "معرض الاعمال",
+    "qualification": "المؤهلات"
+
+  },
+  "home": {
+    "section_style":"home_section_ar",
+    "home_image_transform_scaleX":"home_img_transform_scaleX",
+    "back_img": "background:url(../../../src/assets/img/home_back_rtl.jpg)  center / cover no-repeat;",
+    "welcame": "مـرحبا .. موقع المبرمج محمد الامين",
+    "welcome_class": "welcome_ar_class",
+    "l_01": "مطور",
+    "l_02": "-",
+    "l_03": "-",
+    "l_04": "تطبيقات",
+    "l_05": "-",
+    "l_06": "-",
+    "l_07": "وصفحات",
+    "l_08": "-",
+    "l_09": "-",
+    "l_10": "الانترنت",
+    "l_11": "-",
+    "l_12": "-",
+    "l_13": "للواجهات",
+    "l_14": "-",
+    "l_15": "-",
+    "l_16": "ألأمامية",
+    "l_17": "-",
+    "l_18": "-",
+    "l_19": "والواجهات",
+    "l_20": "-",
+    "l_21": "-",
+    "l_22": "الخلفية",
+    "l_23": ".",
+    "description": "مستوى عالي من الخبرة في تصميم تطبيقات الويب وصفحات الانترنت وتطوير الواجهات الأمامية والخلفية وإنتاج اعمال عالية الجودة.",
+    "created_by": "Это руководство создано для вас компанией {company}.",
+    "num_visits": "Страницу не посещали :( | Страницу посетили {n} раз | Страницу посетили {n} раза | Страницу посетили {n} раз"
+  },
+  "about": {
+    "header": "О нас",
+    "donations": "Пожертвований собрано: {donations}"
+  },
+  "qualification": { 
+    "qualification_title": "qualification_title_ar"
+  }
+}

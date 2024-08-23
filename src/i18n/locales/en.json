@@ -1,0 +1,45 @@
+{
+  "locale": {
+    "en": "English",
+    "fr": "franch",
+    "ar": "Arabic"
+  },
+  "site": {
+    "name": "Mohammed Alamin",
+    "dir": "ltr",
+    "bootstrap": "bootstrap"
+  },
+  "nav": {
+    "my_name": "Mohammed Alamin",
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "qualification": "Qualification",
+    "projects": "Projects",
+    "share_projects": "Contributie Projects"
+  },
+  "home": {
+    "section_style":"home_section_en",
+    "back_img": "background:url(../../../src/assets/img/home_back_ltr.jpg)  center / cover no-repeat;",
+    "welcame": "Hi ... I am Mohammed Alamin",
+    "welcome_class": "welcome_en_class",
+    "l_01": "F",    "l_02": "u",    "l_03": "l", "l_04": "l",    "l_05": "S",    "l_06": "t",    "l_07": "a",    "l_08": "c",    "l_09": "k",
+    "l_10": " - ",    "l_11": "W",    "l_12": "e",    "l_13": "b",    "l_14": " - ",    "l_15": "d",    "l_16": "e",    "l_17": "v",
+    "l_18": "e",    "l_19": "l",    "l_20": "o",    "l_21": "p",    "l_22": "e",    "l_23": "r",
+    
+    "description": "HIGH LEVEL EXPERIENCE IN WEB DESIGN,FORNT-EN AND BACK-END DEVELOPMENT, PRODUCING QUALITY WORK.",
+    "header": "Welcome to the Vue 3 I18n tutorial!",
+    "created_by": "This tutorial was brought to you by {company}.",
+    "num_visits": "This page hasn't been visited :( | This page has been visited {n} time | This page has been visited {n} times"
+  },
+  "about": {
+    "header": "About us",
+    "donations": "Donations raised: {donations}"
+  },
+  "qualification": {
+    "qualification_title": "qualification_title_en"
+    
+  }
+}

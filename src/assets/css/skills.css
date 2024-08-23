@@ -1,0 +1,128 @@
+
+/*==================== SKILLS ====================*/
+.skills_container{
+    row-gap: 0;
+  }
+  
+  .skills_header{
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--mb-2-5);
+    cursor: pointer;
+  }
+  
+  .skills_icon,
+  .skills_arrow{
+    font-size: 2rem;
+    color: var(--first-color);
+  }
+  
+  .skills_icon{
+    margin-right: var(--mb-0-75);
+  }
+  
+  .skills_title{
+    font-size: var(--h3-font-size);
+  }
+  
+  .skills_subtitle{
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
+  }
+  
+  .skills_list{
+    row-gap: 1.5rem;
+    padding-left: 2.7rem;
+  }
+  
+  .skills_arrow{
+    margin-left: auto;
+    transition: .4s;
+  }
+  
+  .skills_titles{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--mb-0-5);
+  }
+  
+  .skills_name{
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+  }
+  
+  .skills_bar,
+  
+  
+  .skills_bar{
+    background-color: var(--first-color-lighter);
+  }
+  
+  .skills_percentage_dark{
+    height: 5px;
+    display: block;
+    background-color: hsl(225.42deg 100% 50%);
+  }
+  .skills_percentage_light{
+    height: 5px;
+    display: block;
+    background-color: hsl(0deg 100% 26.85%);
+}
+  .skills_html{
+    width: 90%;
+  }
+  
+  .skills_css{
+    width: 80%;
+  }
+  
+  .skills_javascript{
+    width: 60%;
+  }
+  .skills_vue{
+    width: 60%;
+  }
+  
+  .skills_php{
+    width: 80%;
+  }
+  
+  .skills_nodejs{
+    width: 60%;
+  }
+  .skills_python{
+    width: 70%;
+  }
+  .skills_ruby{
+    width: 55%;
+  }
+  
+  .skills_learn{
+    width: 85%;
+  }
+  
+  .skills_laravel{
+    width: 70%;
+  }
+  
+  .skills_laravel_with_vue{
+    width: 60%;
+  }
+  
+  .skills_sql{
+    width: 75%;
+  }
+  
+  .skills_close .skills_list{
+    height: 0;
+    overflow: hidden;
+  }
+  
+  .skills_open .skills_list{
+    height: max-content;
+    margin-bottom: var(--mb-2-5);
+  }
+  
+  .skills_open .skills_arrow{
+    transform: rotate(-180deg);
+  }

@@ -1,0 +1,127 @@
+
+
+.content_dark h2 {
+  color: #fff;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.content_light h2 {
+  color: #fff;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.content_dark h2:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 2px #03a9f4;
+}
+.content_light h2:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke:  1px #ae0000;
+}
+
+.content_dark h2:nth-child(2) {
+  color: #03a9f4;
+  animation: animate_text 4s ease-in-out infinite;
+}
+.content_light h2:nth-child(2) {
+  color: black;
+  animation: animate_text 4s ease-in-out infinite;
+}
+
+@keyframes animate_text {
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 45%,
+      16% 44%,
+      33% 50%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+
+
+
+
+/* ******************************************************************* */
+
+.waviy {
+  position: relative;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, .2));
+  font-size: 18px;
+  padding: 11px 0px;
+}
+
+.waviy span {
+  font-family: 'Alfa Slab One', cursive;
+  position: relative;
+  display: inline-block;
+  color: linear-gradient(90deg, #FFD706 0%, #CDFF06 100%);
+  /* text-transform: uppercase; */
+  animation: waviy 5s infinite;
+  animation-delay: calc(0.1s * var(--i));
+
+}
+
+@keyframes waviy {
+
+  0%,
+  40%,
+  100% {
+    transform: translateY(0)
+  }
+
+  20% {
+    transform: translateY(-10px)
+  }
+}
+
+/* ************************************************************************************* */
+.home_description_dark{
+  color: #fff;
+  background-image: linear-gradient(-225deg, #ffffff 0%, #ffa60b 29%, #e4b1c2 67%, #ffa60b 100%);
+}
+.home_description_light{
+  color: #000;
+  background-image: linear-gradient(-225deg, #0035ff 0%, #000000 29%, #ff0055 67%, #0d6efd 100%);
+}
+.animate-charcter {
+  text-transform: uppercase;
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+
+  background-clip: text;
+  /* text-fill-color: transparent; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  /* font-size: 190px; */
+}
+
+@keyframes textclip {
+  to {
+    background-position: 80% center;
+  }
+}
